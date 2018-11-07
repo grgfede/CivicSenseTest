@@ -1,10 +1,4 @@
     <div class="container-fluid">
-      <!-- Breadcrumbs
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="#">Dashboard</a>
-        </li>
-      </ol>-->
       <h1>Dashboard</h1>
       <hr>
       <!-- Icon Cards-->
@@ -17,7 +11,7 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-comments"></i>
               </div>
-              <div class="mr-5"><font size="2">Hai qualcosa da segnalare?</font></div>
+              <div class="mr-5"><span size="2">Hai qualcosa da segnalare?</span></div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="newTicket.php">
               <span class="float-left">Crea nuova segnalazione</span>
@@ -44,7 +38,7 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-list"></i>
               </div>
-              <div class="mr-5"><font size = 3px>Le mie segnalazioni:</font> <?php echo "$righe"; ?></div>
+              <div class="mr-5"><span size = 3px>Le mie segnalazioni:</span> <?php echo "$righe"; ?></div>
             </div>
     <?php if($righe == 0)
     {?>
