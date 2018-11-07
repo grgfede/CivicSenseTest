@@ -47,13 +47,13 @@ session_start();
 
               <!-- FORM NOME -->
               <div class="col-md-6">
-                <label for="exampleInputName">Nome<font color=red size=3> *</font></label>
+                <label for="exampleInputName">Nome<span class="text-danger"> *</span></label>
                 <input class="form-control" id="nome" name="nome" type="text" aria-describedby="nameHelp" placeholder="Inserisci il Nome">
               </div>
 
               <!-- FORM COGNOME -->
               <div class="col-md-6">
-                <label for="exampleInputLastName">Cognome<font color=red size=3> *</font></label>
+                <label for="exampleInputLastName">Cognome<span class="text-danger"> *</span></label>
                 <input class="form-control" id="cognome" name="cognome" type="text" aria-describedby="nameHelp" placeholder="Inserisci il Cognome">
               </div>
               
@@ -65,7 +65,7 @@ session_start();
 
               <!-- FORM CITTA -->
               <div class="col-md-6">
-                <label for="exampleInputResidenza">Citt&agrave; di provenienza<font color=red size=3> *</font></label>
+                <label for="exampleInputResidenza">Citt&agrave; di provenienza<span class="text-danger"> *</span></label>
                 <input class="form-control" id="residenza" name="residenza" type="text" aria-describedby="nameHelp" placeholder="Inserisci la citt&agrave; in cui vivi">
               </div>
 
@@ -79,13 +79,13 @@ session_start();
           </div>
           <!-- FORM EMAIL -->
           <div class="form-group">
-            <label for="exampleInputEmail1">Email<font color=red size=3> *</font></label>
+            <label for="exampleInputEmail1">Email<span class="text-danger"> *</span></label>
             <input class="form-control" id="exampleInputEmail1" name="email" type="email" aria-describedby="emailHelp" placeholder="Inserisci la tua email">
           </div>
 
           <!-- FORM NickName -->
           <div class="form-group">
-            <label for="exampleInputEmail1">NickName<font color=red size=3> *</font></label>
+            <label for="exampleInputEmail1">NickName<span class="text-danger"> *</span></label>
             <input class="form-control" id="exampleInputEmail1" name="username" type="text" aria-describedby="nickHelp" placeholder="Il nickname sar&agrave; il tuo identificativo sulla piattaforma.">
           </div>
 
@@ -93,13 +93,13 @@ session_start();
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
-                <label for="exampleInputPassword1">Password<font color=red size=3> *</font></label>
+                <label for="exampleInputPassword1">Password<span class="text-danger"> *</span></label>
                 <input class="form-control" id="exampleInputPassword1" name="password1" type="password" placeholder="Password">
               </div>
 
               <!-- FORM Password -->
               <div class="col-md-6">
-                <label for="exampleConfirmPassword">Confirm password<font color=red size=3> *</font></label>
+                <label for="exampleConfirmPassword">Confirm password<span class="text-danger"> *</span></label>
                 <input class="form-control" id="exampleConfirmPassword" name="password2" type="password" placeholder="Conferma password">
               </div>
 

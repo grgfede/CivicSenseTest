@@ -131,16 +131,13 @@ if($nome == ""){
 	<div class="cittaindirizzo" id="cittaindirizzo">
 		<div class="col-xl-12 col-sm-12">
 
-			<div class="city" id="citta"><h5>Citt&agrave;<font color=red size=6> *</font></h5>
+			<div class="city" id="citta"><h5>Citt&agrave;<span class = "text-danger"> *</span></h5>
 				<?php
 					$errore = "Inserisci citt&agrave";
 					$errore_citta = $_SESSION['errore_citta'];
 					if($errore_citta){ ?>
 						<font color=red size=2> <?php echo $errore ?> </font>
 						<?php $errore_citta = False;
-					} else if ($errore_citta){
-						$errore = " ";
-						echo $errore;
 					}
 				?>
 				<div class="form-group">
@@ -154,9 +151,6 @@ if($nome == ""){
 			if($errore_indirizzo){?>
 				<font color=red size=2> <?php echo $errore ?> </font>
 				<?php $errore_indirizzo = False;
-			} else if ($errore_indirizzo){
-				$errore = " ";
-				echo $errore;
 			}
 		?>
 				<div class="form-group">
@@ -169,17 +163,13 @@ if($nome == ""){
 
 <div class="row">
 	<div class="col">
-		<h3>Oggetto<font color=red size=6> *</font></h3>
+		<h3>Oggetto<span class = "text-danger"> *</span></h3>
 		<?php
 			$errore = "Inserisci titolo";
 			$errore_titolo = $_SESSION['errore_titolo'];
 			if ($errore_titolo){?>
 					<font color=red size=2> <?php echo $errore ?> </font>
 					<?php $errore_titolo = False;
-			} else if ($errore_titolo){
-				$errore = " ";
-				echo $errore;
-
 			}
 		?>
 		  <input type="text" name="titolo_tk" class="form-control" style="width: 500px;">
@@ -191,19 +181,19 @@ if($nome == ""){
 		<h3>Gravit&agrave;</h3>
 
 		<label class="control control-radio">
-			<a data-toggle="tooltip" title="Il problema non viene considerato di grande rilievo. Si concentra un'attenzione minore."><font color=green><b>Bassa</b></font></a>
+			<a data-toggle="tooltip" title="Il problema non viene considerato di grande rilievo. Si concentra un'attenzione minore."><span class = "text-success"><b>Bassa</b></span></a>
 			<input type="radio" name="radio" value = 1 checked="checked"/>
 			<div class="control_indicator"></div>
 		</label>
 
 		<label class="control control-radio">
-			<a data-toggle="tooltip" title="Il problema potrebbe recare disturbo se non risolto."><b><font color="#fbc531">Media</font></b></a>
+			<a data-toggle="tooltip" title="Il problema potrebbe recare disturbo se non risolto."><span class = "text-warning"><b>Media</b></span></a>
 			<input type="radio" name="radio" value = 2 />
 			<div class="control_indicator"></div>
 		</label>
 
 		<label class="control control-radio">
-			<a data-toggle="tooltip" title="Il problema &egrave; assolutamente da risolvere."><font color=red><b>Alta</b></font></a>
+			<a data-toggle="tooltip" title="Il problema &egrave; assolutamente da risolvere."><span class = "text-danger"><b>Alta</b></span></a>
 			<input type="radio" name="radio" value = 3 />
 			<div class="control_indicator"></div>
 		</label>
@@ -212,18 +202,15 @@ if($nome == ""){
 
 <div class="row">
 	<div class="col">
-		<h3>Categoria<font color=red size=6> *</font></h3>
+		<h3>Categoria<span class = "text-danger"> *</span></h3>
 		<?php
 			$errore = "Categoria non valida";
 		  	$errore_titolo = $_SESSION['errore_titolo'];
 			if ($errore_titolo){?>
 						<font color=red size=2> <?php echo $errore ?> </font>
 						<?php $errore_titolo = False;
-			} else if ($errore_titolo){
-				$errore = " ";
-				echo $errore;
-
-			}
+			} 
+		
 			//QUERY PER PRENDERE LE CATEGORIE
 			$sql = "SELECT * FROM categoria";
 			$sql_esegui = mysqli_query ($connect, $sql);
@@ -240,8 +227,8 @@ if($nome == ""){
 
 <div class="row">
 	<div class="col">
-		<h3>Descrizione<font color=red size=6> *</font></h3>
-		<p><font size="2">Per una buona descrizione si consiglia di comunicare il problema principale in modo chiaro e diretto con i dettagli principali ben leggibili.</font></p>
+		<h3>Descrizione<span class = "text-danger"> *</span></h3>
+		<p><span size="2">Per una buona descrizione si consiglia di comunicare il problema principale in modo chiaro e diretto con i dettagli principali ben leggibili.</span></p>
 
 	<?php
 			$errore = "Inserisci descrizione";
@@ -249,10 +236,7 @@ if($nome == ""){
 			if ($errore_descrizione){?>
 				<font color=red size=2> <?php echo $errore ?> </font>
 				<?php $errore_descrizione = False;
-			} else if ($errore_descrizione){
-				$errore = " ";
-				echo $errore;
-			}
+			} 
 		?>
 		<textarea name="descrizione_tk" class="form-control mb-3" onkeyup="countChar(this)"></textarea>
 		<div id="charNum"></div>
