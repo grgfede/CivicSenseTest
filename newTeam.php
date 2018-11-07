@@ -64,7 +64,7 @@ include "php/dbconnection_session.php";
 						<div class="card-body">
 							<div class = "row">
 		              <div class="col">
-		                <h4>Identificativo Squadra<font color=red size=6> *</font></h4>
+		                <h4>Identificativo Squadra<span class = "text-danger"> *</span></h4>
 										<?php
 											$errore = "Inserisci un identificativo per la squadra";
 											if($_SESSION['erroreId']){?>
@@ -78,7 +78,7 @@ include "php/dbconnection_session.php";
 
 								<div class="row">
 		              <div class="col">
-										<h4>Email<font color=red size=6> *</font></h4>
+										<h4>Email<span class = "text-danger"> *</span></h4>
 										<?php
 											$errore = "Inserisci email del capo squadra";
 											if($_SESSION['erroreMail']){?>
@@ -92,7 +92,7 @@ include "php/dbconnection_session.php";
 
 								<div class="row">
 		              <div class="col">
-		                <h4>Password<font color=red size=6> *</font></h4>
+		                <h4>Password<span class = "text-danger"> *</span></h4>
 										<?php
 											$errore = "Inserisci username del capo squadra";
 											if($_SESSION['errorePassword']){?>
