@@ -1,6 +1,5 @@
 <?php
 
-	session_start();
 	$nome = $_SESSION['admin_name'];
 	if ($nome == ""){
 		$nome = "Ospite";
@@ -43,7 +42,7 @@
           <ul class="sidenav-second-level collapse" id="collapseSegnalazione">
         <!--SOTTOITEM-->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Crea segnalazione">
-         <a class="nav-link" id="detailTicketLink" href="onclick="detail()"">
+         <a class="nav-link" id="detailTicketLink" href="<?echo $_SESSION['cdt_link'];?>">
            <i class="fa fa-fw fa-plus-circle"></i>
            <span class="nav-link-text">Dettagli segnalazione</span>
          </a>
@@ -105,3 +104,8 @@
       </ul>
     </div>
   </nav>
+<!--
+      <script type="text/javascript">
+      <? $link = (isset($segnalazione))? "detailTicket.php?id=".$segnalazione['cdt']."": "#";?>
+      document.getElementById("detailTicketLink").href="<?echo $link?>";
+    </script>-->

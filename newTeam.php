@@ -71,7 +71,6 @@ include "php/dbconnection_session.php";
 												<font color=red size=2><?echo $errore?></font>
 												<?$_SESSION['erroreUsername'] = False;
 											}?>
-										?>
 		                <input type="text" name="id_squadra" class="form-control" placeholder="Nome squadra risoluzione">
 		              </div>
 								</div>

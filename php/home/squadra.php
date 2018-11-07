@@ -10,6 +10,8 @@ $segnalazione = mysqli_fetch_array($info_segnalazione);
 
 $allegati_segnalazione = mysqli_query($connect,"select * from allegati where cdt=".$segnalazione['cdt']);
 $num_allegati = mysqli_num_rows($allegati_segnalazione);
+
+$_SESSION['cdt_link'] = (isset($segnalazione))? "detailTicket.php?id=".$segnalazione['cdt']: "#";
 ?>
 
 <script type="text/javascript">
@@ -243,22 +245,7 @@ interval: 4000
     var marker = new google.maps.Marker({
         position:{lat:<? echo $segnalazione['latitudine']?>,lng:<? echo$segnalazione['longitudine']?>},
         map:map});
-    var contentString =
-    		'<div id="content">'+
-    		'<div id="siteNotice"></div>'+
-            '<h3 id="firstHeading" class="firstHeading">'+
-            '<a href="detailTicket.php?id=<?echo $segnalazione['cdt']?>"><?echo $segnalazione['nome_evento']?></a>'+
-            '</h3>'+
-            '<div id="bodyContent">'+
-            '<p><b>Descrizione: </b>&nbsp<?echo$segnalazione['descrizione']?></p>'+
-            '<p><b>Data creazione: </b>&nbsp<?echo date("d-m-Y", strtotime($segnalazione['data_creazione']));?></p>'+
-            '</div></div>';
 
-    var infowindow = new google.maps.InfoWindow({
-          content: contentString});
-
-    /*marker.addListener('click',function() {
-        infowindow.open(map, marker);});*/
 <? } else{ ?>
 	var uluru = {lat: -34.397, lng: 150.644};
 	    /* Creo mappa che centra la residenza "uluru" */
@@ -279,20 +266,8 @@ interval: 4000
     <script async defer
     src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyBNEuVJiKb4mSWwfqRYsCArxJWrv7il68w&callback=initMap">
     </script>
-    <script type="text/javascript">
-      <? $link = (isset($segnalazione))? "detailTicket.php?id=".$segnalazione['cdt']."": "#";?>
-      document.getElementById("detailTicketLink").href="<?echo $link?>";
-    </script>
     <? if(isset($segnalazione)){?>
     <script type="text/javascript">
       document.getElementById("gravita").style.backgroundImage = "url('"+get_gravita(<? echo $segnalazione['gravita'];?>)+"')";
-    </script>
-    <!--SCRIPT PER MODIFICARE LINK PER DETTAGLIO SEGNALAZIONE-->
-    <script type="text/javascript">
-        function detail(){
-          var cdt = <?echo$segnalazione['cdt'];?>;
-
-          window.location = (cdt != "")? "detailTicket?id="+cdt:"#";
-        }
     </script>
     <?}?>
