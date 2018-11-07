@@ -23,14 +23,6 @@ if(isset($_POST["login"]))
 
   if($user)
   {
-<<<<<<< HEAD
-=======
-   if(!empty($_POST["remember"]))
-   {
-    setcookie ($member_login,$name,time()+ 60*60*7);
-    setcookie ($member_password,$password,time()+ 60 * 60 * 7);
-   }
->>>>>>> e77bfa015d70c2c2b7d7b5c3552bd3c44e76f86b
    $_SESSION["admin_name"] = $name;
    $_SESSION["tipo"] = $user['tipo'];
 
@@ -123,15 +115,6 @@ if(isset($_POST["login"]))
             <label for="exampleInputPassword1">Password</label>
             <input class="form-control" name="member_password" value="<?php if(isset($_COOKIE[$member_password])) { echo $_COOKIE[$member_password]; } ?>" type="password" placeholder="Password">
           </div>
-<<<<<<< HEAD
-=======
-          <div class="form-group">
-            <div class="form-check">
-              <label class="form-check-label">
-                <input class="form-check-input" name="remember" <?php if(isset($_COOKIE[$member_login])) { ?> checked <?php } ?> type="checkbox"> Ricordami</label>
-            </div>
-          </div>
->>>>>>> e77bfa015d70c2c2b7d7b5c3552bd3c44e76f86b
           <button class="btn btn-primary btn-block" name="login">Login</button>
         </form>
         <div class="text-center">
