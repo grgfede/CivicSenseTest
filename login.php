@@ -7,14 +7,15 @@ if(isset($_SESSION["admin_name"]))
  header("location:index.php");
 }
 
+$member_password = "member_password";
 
 if(isset($_POST["login"]))
 {
- if(!empty($_POST["member_name"]) && !empty($_POST["member_password"]))
+ if(!empty($_POST["member_name"]) && !empty($_POST[$member_password]))
  {
 
   $name = mysqli_real_escape_string($connect, $_POST["member_name"]);
-  $password = md5(mysqli_real_escape_string($connect, $_POST["member_password"]));
+  $password = md5(mysqli_real_escape_string($connect, $_POST[$member_password]));
   $sql = "Select * from login where username = '" . $name . "' and password = '" . $password . "'";
   $result = mysqli_query($connect,$sql);
   $user = mysqli_fetch_array($result);
@@ -24,7 +25,7 @@ if(isset($_POST["login"]))
    if(!empty($_POST["remember"]))
    {
     setcookie ("member_login",$name,time()+ 60*60*7);
-    setcookie ("member_password",$password,time()+ 60 * 60 * 7);
+    setcookie ($member_password,$password,time()+ 60 * 60 * 7);
    }
    $_SESSION["admin_name"] = $name;
    $_SESSION["tipo"] = $user['tipo'];
@@ -117,7 +118,7 @@ if(isset($_POST["login"]))
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input class="form-control" name="member_password" value="<?php if(isset($_COOKIE["member_password"])) { echo $_COOKIE["member_password"]; } ?>" type="password" placeholder="Password">
+            <input class="form-control" name="member_password" value="<?php if(isset($_COOKIE[$member_password])) { echo $_COOKIE[$member_password]; } ?>" type="password" placeholder="Password">
           </div>
           <div class="form-group">
             <div class="form-check">
