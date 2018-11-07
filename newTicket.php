@@ -1,14 +1,11 @@
 <!--
 	#################################################################################
-	#		REGOLE PER UNA BUONA PERMANENZA DI GRUPPO								#
-	#	1 Se scrivi del nuovo codice, COMMENTA QUELLO CHE FAI						#
-	#	2 Modifichi del codice? COMMENTA LA MODIFICA								#
-	#	3 Modifichi del codice e non funziona? RIMETTI TUTTO A POSTO				#
-	#	4 Hai dubbi su qualche parte del codice? NON METTERE MANI					#
-	#	5 CERCA DI COMMENTARE CODICE CHE APPARE COMPLICATO AL RESTO DEL GRUPPO		#
-	#																				#
-	#  Chi infrange le regole siamo obbligati a dare della puttana alla madre		#
-	#  Buon lavoro :)																#
+	#		REGOLE PER UNA BUONA PERMANENZA DI GRUPPO			#
+	#	1 Se scrivi del nuovo codice, COMMENTA QUELLO CHE FAI			#
+	#	2 Modifichi del codice? COMMENTA LA MODIFICA				#
+	#	3 Modifichi del codice e non funziona? RIMETTI TUTTO A POSTO		#
+	#	4 Hai dubbi su qualche parte del codice? NON METTERE MANI		#
+	#	5 CERCA DI COMMENTARE CODICE CHE APPARE COMPLICATO AL RESTO DEL GRUPPO #															#
 	#################################################################################
 -->
 <?php
@@ -137,10 +134,11 @@ if($nome == ""){
 			<div class="city" id="citta"><h5>Citt&agrave;<font color=red size=6> *</font></h5>
 				<?php
 					$errore = "Inserisci citt&agrave";
-					if($_SESSION['errore_citta']){
-						echo "<font color=red size=2>".$errore."</font>";
-						$_SESSION['errore_citta'] = False;
-					} else if ($_SESSION['errore_citta']){
+					$errore_citta = $_SESSION['errore_citta'];
+					if($errore_citta){ ?>
+						<font color=red size=2> <?php echo $errore ?> </font>
+						<?php $errore_citta = False;
+					} else if ($errore_citta){
 						$errore = " ";
 						echo $errore;
 					}
@@ -152,10 +150,11 @@ if($nome == ""){
 		<div class="address"><h5>Indirizzo</h5>
 		<?php
 			$errore = "Inserisci Indirizzo";
-			if($_SESSION['errore_indirizzo']){
-				echo "<font color=red size=2>".$errore."</font>";
-				$_SESSION['errore_indirizzo'] = False;
-			} else if ($_SESSION['errore_indirizzo']){
+			$errore_indirizzo = $_SESSION['errore_indirizzo'];
+			if($errore_indirizzo){?>
+				<font color=red size=2> <?php echo $errore ?> </font>
+				<?php $errore_indirizzo = False;
+			} else if ($errore_indirizzo){
 				$errore = " ";
 				echo $errore;
 			}
@@ -173,10 +172,11 @@ if($nome == ""){
 		<h3>Oggetto<font color=red size=6> *</font></h3>
 		<?php
 			$errore = "Inserisci titolo";
-			if ($_SESSION['errore_titolo']){
-				echo "<font color=red size=2>".$errore."</font>";
-				$_SESSION['errore_titolo'] = False;
-			} else if ($_SESSION['errore_titolo']){
+			$errore_titolo = $_SESSION['errore_titolo'];
+			if ($errore_titolo){?>
+					<font color=red size=2> <?php echo $errore ?> </font>
+					<?php $errore_titolo = False;
+			} else if ($errore_titolo){
 				$errore = " ";
 				echo $errore;
 
@@ -215,10 +215,11 @@ if($nome == ""){
 		<h3>Categoria<font color=red size=6> *</font></h3>
 		<?php
 			$errore = "Categoria non valida";
-			if ($_SESSION['errore_categoria']){
-				echo "<font color=red size=2>".$errore."</font>";
-				$_SESSION['errore_titolo'] = False;
-			} else if ($_SESSION['errore_titolo']){
+		  	$errore_titolo = $_SESSION['errore_titolo'];
+			if ($errore_titolo){?>
+						<font color=red size=2> <?php echo $errore ?> </font>
+						<?php $errore_titolo = False;
+			} else if ($errore_titolo){
 				$errore = " ";
 				echo $errore;
 
@@ -244,11 +245,11 @@ if($nome == ""){
 
 	<?php
 			$errore = "Inserisci descrizione";
-			if ($_SESSION['errore_descrizione']){
-
-				echo "<font color=red size=2>".$errore."</font>";
-				$_SESSION['errore_descrizione'] = False;
-			} else if ($_SESSION['errore_descrizione']){
+			$errore_descrizione = $_SESSION['errore_descrizione'];
+			if ($errore_descrizione){?>
+				<font color=red size=2> <?php echo $errore ?> </font>
+				<?php $errore_descrizione = False;
+			} else if ($errore_descrizione){
 				$errore = " ";
 				echo $errore;
 			}
@@ -262,9 +263,9 @@ if($nome == ""){
 	<div class="col">
 		<?php
 				$errore = "Il file inserito non &egrave; una immagine. Per favore, scegliere una immagine.";
-				if ($_SESSION['errore_immagine']){
-					echo "<font color=red size=2>".$errore."</font>";
-					$_SESSION['errore_immagine'] = False;
+				if ($_SESSION['errore_immagine']){?>
+						<font color=red size=2> <?php echo $errore ?> </font>
+						<?php $_SESSION['errore_immagine'] = False;
 					echo "<br>";
 				}
 			?>

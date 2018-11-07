@@ -120,6 +120,7 @@ if($riga == 0){
           case 3:
             $gravita_colore="red.png";
             break;
+          default: break;
         }
       ?>
       <td><div class="d-flex mr-3 rounded-circle w-30 h-30 gravita" style="background-image: url('images/icons/<?echo $gravita_colore?>');"></div></td>
