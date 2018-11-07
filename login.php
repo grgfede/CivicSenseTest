@@ -8,6 +8,7 @@ if(isset($_SESSION["admin_name"]))
 }
 
 $member_password = "member_password";
+$member_login = "member_login";
 
 if(isset($_POST["login"]))
 {
@@ -24,7 +25,7 @@ if(isset($_POST["login"]))
   {
    if(!empty($_POST["remember"]))
    {
-    setcookie ("member_login",$name,time()+ 60*60*7);
+    setcookie ($member_login,$name,time()+ 60*60*7);
     setcookie ($member_password,$password,time()+ 60 * 60 * 7);
    }
    $_SESSION["admin_name"] = $name;
@@ -70,6 +71,8 @@ if(isset($_POST["login"]))
         $_SESSION['s_comune'] = $record['comune'];
       }
       break;
+     
+    default: break;
    }
 
    header("location:index.php");
@@ -114,7 +117,7 @@ if(isset($_POST["login"]))
         <form name="login" id="form" action="" method="post">
           <div class="form-group">
             <label for="exampleInputEmail1">Username</label>
-            <input class="form-control" name="member_name" value="<?php if(isset($_COOKIE["member_login"])) { echo $_COOKIE["member_login"]; } ?>" type="text" aria-describedby="emailHelp" placeholder="Inserisci Username" autofocus>
+            <input class="form-control" name="member_name" value="<?php if(isset($_COOKIE[$member_login])) { echo $_COOKIE[$member_login]; } ?>" type="text" aria-describedby="emailHelp" placeholder="Inserisci Username" autofocus>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
@@ -123,7 +126,7 @@ if(isset($_POST["login"]))
           <div class="form-group">
             <div class="form-check">
               <label class="form-check-label">
-                <input class="form-check-input" name="remember" <?php if(isset($_COOKIE["member_login"])) { ?> checked <?php } ?> type="checkbox"> Ricordami</label>
+                <input class="form-check-input" name="remember" <?php if(isset($_COOKIE[$member_login])) { ?> checked <?php } ?> type="checkbox"> Ricordami</label>
             </div>
           </div>
           <button class="btn btn-primary btn-block" name="login">Login</button>
