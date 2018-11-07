@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+include "dbconnection_session.php";
 
 
 //Variabili booleane per il controllo dei campi del form precedente. Se al pi� un campo � vuoto, restituisce errore.
@@ -111,8 +111,6 @@ if(empty($_POST['citta_tk']) && !isset($_POST[check_geo])){
 		//RECUPERA ID AUTOGENERATO
 		$last_cdt = mysqli_insert_id($connect);
 		$_SESSION['last_cdt'] = $last_cdt;
-
-		$connect = mysqli_connect("localhost", "civicsense2018", "", "my_civicsense2018");
 
 
 

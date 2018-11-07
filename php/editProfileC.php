@@ -1,8 +1,6 @@
 <?php
-
-	session_start();
+include "dbconnection_session.php";
 	$username = $_SESSION['admin_name'];
-	$connect = mysqli_connect("localhost", "civicsense2018", "", "my_civicsense2018");
 
 	$controllo = false;
 	$controlloPass = false;

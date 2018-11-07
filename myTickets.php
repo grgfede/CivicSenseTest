@@ -14,7 +14,7 @@
 <?php
 
 // Inialize session
-session_start();
+include "php/dbconnection_session.php";
 
 // Check, if username session is NOT set then this page will jump to login page
 if (!isset($_SESSION['admin_name'])) {
@@ -23,7 +23,6 @@ header('Location: index.html');
 
 
 	$nome = $_SESSION['admin_name'];
-	$connect = mysqli_connect("localhost", "civicsense2018", "", "my_civicsense2018");
 	$query = "SELECT * FROM crea_segue where id_cittadino = '$nome'";
 	$risultato = mysqli_query($connect, $query);
 	$righe = mysqli_num_rows($risultato);

@@ -1,6 +1,5 @@
 <?php
-session_start();
-$connect = mysqli_connect("localhost", "civicsense2018", "", "my_civicsense2018");
+include "dbconnection_session.php";
 
 if($_SESSION['admin_name'] == ""){
 	$nome_utente = "Ospite";
