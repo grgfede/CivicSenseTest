@@ -28,7 +28,7 @@
         <!-- PRIMO ITEM-->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="index.php">
-            <i class="fa fa-fw fa-dashboard"></i>
+            <em class="fa fa-fw fa-dashboard"></em> 
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
@@ -36,21 +36,21 @@
         <!--SECONDO ITEM-->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Segnalazione">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseSegnalazione" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-exclamation-circle"></i>
+            <em class="fa fa-fw fa-exclamation-circle"></em> 
             <span class="nav-link-text">Segnalazione</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseSegnalazione">
         <!--SOTTOITEM-->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Crea segnalazione">
          <a class="nav-link" id="detailTicketLink" href="<?echo $_SESSION['cdt_link'];?>">
-           <i class="fa fa-fw fa-plus-circle"></i>
+           <em class="fa fa-fw fa-plus-circle"></em> 
            <span class="nav-link-text">Dettagli segnalazione</span>
          </a>
        </li>
         <!--SOTTOITEM-->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Segnalazioni seguite">
           <a class="nav-link" href="completedReports.php">
-            <i class="fa fa-fw fa-list"></i>
+            <em class="fa fa-fw fa-list"></em> 
             <span class="nav-link-text">Storico segnalazioni</span>
           </a>
         </li>
@@ -59,14 +59,14 @@
         <!--TERZO ITEM-->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Statistiche">
           <a class="nav-link" href="charts.php">
-            <i class="fa fa-fw fa-bar-chart"></i>
+            <em class="fa fa-fw fa-bar-chart"></em> 
             <span class="nav-link-text">Statistiche</span>
           </a>
         </li>
         <!--QUARTO ITEM-->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="I nostri Partners">
           <a class="nav-link" href="partners.php">
-            <i class="fa fa-fw fas fa-handshake-o"></i>
+            <em class="fa fa-fw fas fa-handshake-o"></em> 
             <span class="nav-link-text">Partners</span>
           </a>
         </li>
@@ -74,7 +74,7 @@
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
           <a class="nav-link text-center" id="sidenavToggler">
-            <i class="fa fa-fw fa-angle-left"></i>
+            <em class="fa fa-fw fa-angle-left"></em> 
           </a>
         </li>
       </ul>
@@ -86,7 +86,7 @@
                  <input class="form-control" type="text" name="chiave" placeholder="Cerca CDT...">
                <span class="input-group-append">
                  <button class="btn btn-primary">
-                  <i class="fa fa-search"></i>
+                  <em class="fa fa-search"></em> 
                 </button>
               </span>
             </div>
@@ -95,17 +95,12 @@
         <li class="nav-item">
           <?if ($nome == "Ospite"){?>
           <a href="" class="nav-link" data-toggle="modal" data-target="#modalLogin">&nbspLogin
-            <i class="fa fa-fw fa-sign-in"></i></a>
+            <em class="fa fa-fw fa-sign-in"></em> </a>
             <?} else {?>
           <a href="" class="nav-link" data-toggle="modal" data-target="#modalLogout">&nbspLogout
-            <i class="fa fa-fw fa-sign-out"></i></a>
+            <em class="fa fa-fw fa-sign-out"></em> </a>
               <?}?>
         </li>
       </ul>
     </div>
   </nav>
-<!--
-      <script type="text/javascript">
-      <? $link = (isset($segnalazione))? "detailTicket.php?id=".$segnalazione['cdt']."": "#";?>
-      document.getElementById("detailTicketLink").href="<?echo $link?>";
-    </script>-->

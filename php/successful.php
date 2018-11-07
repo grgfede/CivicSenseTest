@@ -43,7 +43,7 @@ $last_cdt=$_SESSION['last_cdt'];
 
 				<br><br> <h2 style="color:#0fad00">Complimenti!</h2>
 
-				<img src="../images/verificato.png">
+				<img src="../images/verificato.png" alt="successful">
 
 				<h3>Ciao, <?php echo $nome_utente; ?></h3>
 

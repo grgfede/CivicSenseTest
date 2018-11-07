@@ -28,21 +28,21 @@
         <!--PRIMO ITEM-->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="index.php">
-            <i class="fa fa-fw fa-dashboard"></i>
+            <em class="fa fa-fw fa-dashboard"></em> 
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
         <!--SECONDO ITEM-->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Segnalazione">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseSegnalazione" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-exclamation-circle"></i>
+            <em class="fa fa-fw fa-exclamation-circle"></em> 
             <span class="nav-link-text">Segnalazione</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseSegnalazione">
         <!--SOTTOITEM-->
 				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Crea segnalazione">
 				 <a class="nav-link" href="newTicket.php">
-					 <i class="fa fa-fw fa-plus-circle"></i>
+					 <em class="fa fa-fw fa-plus-circle"></em> 
 					 <span class="nav-link-text">Crea una segnalazione</span>
 				 </a>
 			 </li>
@@ -50,7 +50,7 @@
         <!--SOTTOITEM-->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Segnalazioni seguite">
           <a class="nav-link" href="myTickets.php">
-            <i class="fa fa-fw fa-list"></i>
+            <em class="fa fa-fw fa-list"></em> 
             <span class="nav-link-text">Segnalazioni seguite</span>
           </a>
         </li>
@@ -63,37 +63,16 @@
         <!--TERZO ITEM-->
 				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Registrati">
           <a class="nav-link" href="register.php">
-            <i class="fa fa-fw fa-user-plus"></i>
+            <em class="fa fa-fw fa-user-plus"></em> 
             <span class="nav-link-text">Registrati</span>
           </a>
         </li>
-				<!--<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Registrati">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseRegistrati" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-user-plus"></i>
-            <span class="nav-link-text">Registrati</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="collapseRegistrati">
-            SOTTOITEM
-            <li>
-              <a href="register.php">
-                <i class="fa fa-fw fa-users"></i>
-                <span>Per il Cittadino</span>
-              </a>
-            </li>
-            SOTTOITEM
-            li>
-              <a href="registerIstitution.php">
-                <i class="fa fa-fw fa-building"></i>
-                <span>Per l'Ente</span>
-              </a>
-            </li>
-          </ul>
-        </li>-->
+
         <?} else {?>
     <!--QUARTO ITEM-->
     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Profilo">
           <a class="nav-link" href="profile.php">
-            <i class="fa fa-user-circle"></i>
+            <em class="fa fa-user-circle"></em> 
             <span class="nav-link-text">Profilo</span>
           </a>
         </li>
@@ -103,14 +82,14 @@
         <!--QUINTO ITEM-->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Statistiche">
           <a class="nav-link" href="charts.php">
-            <i class="fa fa-fw fa-bar-chart"></i>
+            <em class="fa fa-fw fa-bar-chart"></em> 
             <span class="nav-link-text">Statistiche</span>
           </a>
         </li>
         <!--SESTO ITEM-->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="I nostri Partners">
           <a class="nav-link" href="partners.php">
-            <i class="fa fa-fw fas fa-handshake-o"></i>
+            <em class="fa fa-fw fas fa-handshake-o"></em> 
             <span class="nav-link-text">Partners</span>
           </a>
         </li>
@@ -118,19 +97,19 @@
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
           <a class="nav-link text-center" id="sidenavToggler">
-            <i class="fa fa-fw fa-angle-left"></i>
+            <em class="fa fa-fw fa-angle-left"></em> 
           </a>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
         <!--<li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-fw fa-envelope"></i>
+            <em class="fa fa-fw fa-envelope"></em> 
             <span class="d-lg-none">Messages
               <span class="badge badge-pill badge-primary">12 New</span>
             </span>
             <span class="indicator text-primary d-none d-lg-block">
-              <i class="fa fa-fw fa-circle"></i>
+              <em class="fa fa-fw fa-circle"></em> 
             </span>
           </a>
           <div class="dropdown-menu" aria-labelledby="messagesDropdown">
@@ -159,14 +138,14 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-fw fa-bell"></i>
+            <em class="fa fa-fw fa-bell"></em> 
             <span class="d-lg-none">Alerts
 
               SE SI VUOLE TOGLIERE LE NOTIFICHE, COMMENTA LA PRIMA RIGA SOTTO
     <span class="badge badge-pill badge-warning">6 New</span>
             </span>
             <span class="indicator text-warning d-none d-lg-block">
-              <i class="fa fa-fw fa-circle"></i>
+              <em class="fa fa-fw fa-circle"></em> 
             </span>
           </a>
           <div class="dropdown-menu" aria-labelledby="alertsDropdown">
@@ -175,7 +154,7 @@
             <a class="dropdown-item" href="#">
               <span class="text-success">
                 <strong>
-                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
+                  <em class="fa fa-long-arrow-up fa-fw"></em> Status Update</strong>
               </span>
               <span class="small float-right text-muted">11:21 AM</span>
               <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
@@ -184,7 +163,7 @@
             <a class="dropdown-item" href="#">
               <span class="text-danger">
                 <strong>
-                  <i class="fa fa-long-arrow-down fa-fw"></i>Status Update</strong>
+                  <em class="fa fa-long-arrow-down fa-fw"></em> Status Update</strong>
               </span>
               <span class="small float-right text-muted">11:21 AM</span>
               <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
@@ -193,7 +172,7 @@
             <a class="dropdown-item" href="#">
               <span class="text-success">
                 <strong>
-                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
+                  <em class="fa fa-long-arrow-up fa-fw"></em> Status Update</strong>
               </span>
               <span class="small float-right text-muted">11:21 AM</span>
               <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
@@ -207,7 +186,7 @@
             <div class="input-group w-100">
                  <input class="form-control" type="text" name="chiave" placeholder="Cerca CDT...">
                <div class="input-group-append">
-                 <button class="btn btn-primary"><i class="fa fa-search"></i></button>
+                 <button class="btn btn-primary"><em class="fa fa-search"></em> </button>
               </div>
             </div>
           </form>
@@ -215,10 +194,10 @@
         <li class="nav-item">
           <?if ($nome == "Ospite"){?>
           <a href="" class="nav-link" data-toggle="modal" data-target="#modalLogin">&nbspLogin
-            <i class="fa fa-fw fa-sign-in"></i></a>
+            <em class="fa fa-fw fa-sign-in"></em> </a>
             <?} else {?>
           <a href="" class="nav-link" data-toggle="modal" data-target="#modalLogout">&nbspLogout
-            <i class="fa fa-fw fa-sign-out"></i></a>
+            <em class="fa fa-fw fa-sign-out"></em> </a>
               <?}?>
         </li>
       </ul>

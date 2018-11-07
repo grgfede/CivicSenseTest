@@ -35,17 +35,6 @@
         </li>
         <li class="breadcrumb-item active">Il tuo profilo</li>
       </ol>
-
-     <!-- <div class="row"> -->
-       <!-- <div class="col-12">-->
-      <!--<div class="col-md-5  toppad  pull-right col-md-offset-3 ">
-           <A href="edit.html" >Edit Profile</A>
-
-        <A href="edit.html" >Logout</A>
-       <br>
-<p class=" text-info">May 05,2014,03:00 pm </p>
-      </div>-->
-
           <div class="card">
             <div class="card-header">
               <h3 class="panel-title">Il tuo profilo</h3>
@@ -57,38 +46,31 @@
                   <table class="table table-user-information">
                     <tbody>
                       <tr>
-                        <td><b>Nome</b></td>
+                        <td><strong>Nome</strong></td>
                         <td><?php echo $nomeUtente; ?></td>
                       </tr>
                       <tr>
-                        <td><b>Cognome</b></td>
+                        <td><strong>Cognome</strong></td>
                         <td><?php echo $cognome; ?></td>
                       </tr>
                       <tr>
-                        <td><b>Data di nascita</b></td>
+                        <td><strong>Data di nascita</strong></td>
                         <td><?php if ($nascita == ''){$nascita = 'Non definita'; } echo $nascita; ?></td>
                       </tr>
 
                          <tr>
                        <tr>
-                        <td><b>Sesso</b></td>
+                        <td><strong>Sesso</strong></td>
                         <td><?php if($sesso == ''){$sesso = 'Non specificato'; } echo $sesso; ?></td>
                       </tr>
                         <tr>
-                        <td><b>Residenza</b></td>
+                        <td><strong>Residenza</strong></td>
                         <td><?php echo $localita; ?></td>
                       </tr>
                       <tr>
-                        <td><b>Email</b></td>
+                        <td><strong>Email</strong></td>
                         <td><a href="mailto:info@support.com"><?php echo $email; ?></a></td>
                       </tr>
-					  <!--<tr>
-                        <td><b>Ticket inseriti</b></td>
-                        <td><?php echo $localita; ?></td>
-                      </tr>-->
-                        <!--<td><b>Phone Number</b></td>
-                        <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)
-                        </td>-->
                          </tr>
                     </tbody>
                   </table>
@@ -96,10 +78,9 @@
               </div>
             </div>
                  <div class="card-footer">
-                        <!--<a data-original-title="Invia un messaggio privato" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="fa fa-fw fa-envelope"></i></a>-->
+
                         <span class="pull-right">
-                            <a href="editProfile.php" data-original-title="Modifica Profilo" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="fa fa-fw fa-edit"></i></a>
-                            <!--<a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="fa fa-fw fa-remove"></i></a>-->
+                            <a href="editProfile.php" data-original-title="Modifica Profilo" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><em class="fa fa-fw fa-edit"></em> </a>
                         </span>
                     </div>
           </div>

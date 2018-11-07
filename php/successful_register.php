@@ -53,7 +53,7 @@
 
 
 
-		<img src="../images/register-ok.png">
+		<img src="../images/register-ok.png" alt="successfull">
 
 
 

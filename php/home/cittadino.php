@@ -9,14 +9,14 @@
           <div class="card text-white bg-danger o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
-                <i class="fa fa-fw fa-comments"></i>
+                <em class="fa fa-fw fa-comments"></em> 
               </div>
               <div class="mr-5"><span size="2">Hai qualcosa da segnalare?</span></div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="newTicket.php">
               <span class="float-left">Crea nuova segnalazione</span>
               <span class="float-right">
-                <i class="fa fa-angle-right"></i>
+                <em class="fa fa-angle-right"></em> 
               </span>
             </a>
           </div>
@@ -36,7 +36,7 @@
 
             <div class="card-body">
               <div class="card-body-icon">
-                <i class="fa fa-fw fa-list"></i>
+                <em class="fa fa-fw fa-list"></em> 
               </div>
               <div class="mr-5"><span size = 3px>Le mie segnalazioni:</span> <?php echo "$righe"; ?></div>
             </div>
@@ -49,7 +49,7 @@
 <span class="float-left">Vedi i dettagli</span>
 <? }  ?> <!--//FINE SECONDO IF-->
     <span class="float-right">
-    <i class="fa fa-angle-right"></i>
+    <em class="fa fa-angle-right"></em> 
     </span></a>
     </div>
   </div>
@@ -61,14 +61,14 @@
           <div class="card text-white bg-success o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
-                <i class="fa fa-fw fa-bar-chart"></i>
+                <em class="fa fa-fw fa-bar-chart"></em> 
               </div>
               <div class="mr-5">Statistiche</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="charts.php">
               <span class="float-left">Vedi le Statistiche</span>
               <span class="float-right">
-                <i class="fa fa-angle-right"></i>
+                <em class="fa fa-angle-right"></em> 
               </span>
             </a>
           </div>
@@ -81,14 +81,14 @@
           <div class="card text-white bg-primary o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
-                <i class="fa fa-fw fa-handshake-o"></i>
+                <em class="fa fa-fw fa-handshake-o"></em> 
               </div>
               <div class="mr-5">Partners</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="partners.php">
               <span class="float-left">Vedi i nostri Partners</span>
               <span class="float-right">
-                <i class="fa fa-angle-right"></i>
+                <em class="fa fa-angle-right"></em> 
               </span>
             </a>
           </div>

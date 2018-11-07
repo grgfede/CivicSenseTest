@@ -136,7 +136,7 @@ if($nome == ""){
 					$errore = "Inserisci citt&agrave";
 					$errore_citta = $_SESSION['errore_citta'];
 					if($errore_citta){ ?>
-						<font color=red size=2> <?php echo $errore ?> </font>
+						<p class="text-danger"><?echo $errore?></p>
 						<?php $errore_citta = False;
 					}
 				?>
@@ -149,7 +149,7 @@ if($nome == ""){
 			$errore = "Inserisci Indirizzo";
 			$errore_indirizzo = $_SESSION['errore_indirizzo'];
 			if($errore_indirizzo){?>
-				<font color=red size=2> <?php echo $errore ?> </font>
+				<p class="text-danger"><?echo $errore?></p>
 				<?php $errore_indirizzo = False;
 			}
 		?>
@@ -168,7 +168,7 @@ if($nome == ""){
 			$errore = "Inserisci titolo";
 			$errore_titolo = $_SESSION['errore_titolo'];
 			if ($errore_titolo){?>
-					<font color=red size=2> <?php echo $errore ?> </font>
+					<p class="text-danger"><?echo $errore?></p>
 					<?php $errore_titolo = False;
 			}
 		?>
@@ -181,19 +181,19 @@ if($nome == ""){
 		<h3>Gravit&agrave;</h3>
 
 		<label class="control control-radio">
-			<a data-toggle="tooltip" title="Il problema non viene considerato di grande rilievo. Si concentra un'attenzione minore."><span class = "text-success"><b>Bassa</b></span></a>
+			<a data-toggle="tooltip" title="Il problema non viene considerato di grande rilievo. Si concentra un'attenzione minore."><span class = "text-success"><strong>Bassa</strong></span></a>
 			<input type="radio" name="radio" value = 1 checked="checked"/>
 			<div class="control_indicator"></div>
 		</label>
 
 		<label class="control control-radio">
-			<a data-toggle="tooltip" title="Il problema potrebbe recare disturbo se non risolto."><span class = "text-warning"><b>Media</b></span></a>
+			<a data-toggle="tooltip" title="Il problema potrebbe recare disturbo se non risolto."><span class = "text-warning"><strong>Media</strong></span></a>
 			<input type="radio" name="radio" value = 2 />
 			<div class="control_indicator"></div>
 		</label>
 
 		<label class="control control-radio">
-			<a data-toggle="tooltip" title="Il problema &egrave; assolutamente da risolvere."><span class = "text-danger"><b>Alta</b></span></a>
+			<a data-toggle="tooltip" title="Il problema &egrave; assolutamente da risolvere."><span class = "text-danger"><strong>Alta</strong></span></a>
 			<input type="radio" name="radio" value = 3 />
 			<div class="control_indicator"></div>
 		</label>
@@ -207,7 +207,7 @@ if($nome == ""){
 			$errore = "Categoria non valida";
 		  	$errore_titolo = $_SESSION['errore_titolo'];
 			if ($errore_titolo){?>
-						<font color=red size=2> <?php echo $errore ?> </font>
+						<p class="text-danger"><?echo $errore?></p>
 						<?php $errore_titolo = False;
 			} 
 		
@@ -234,7 +234,7 @@ if($nome == ""){
 			$errore = "Inserisci descrizione";
 			$errore_descrizione = $_SESSION['errore_descrizione'];
 			if ($errore_descrizione){?>
-				<font color=red size=2> <?php echo $errore ?> </font>
+				<p class="text-danger"><?echo $errore?></p>
 				<?php $errore_descrizione = False;
 			} 
 		?>
@@ -248,7 +248,7 @@ if($nome == ""){
 		<?php
 				$errore = "Il file inserito non &egrave; una immagine. Per favore, scegliere una immagine.";
 				if ($_SESSION['errore_immagine']){?>
-						<font color=red size=2> <?php echo $errore ?> </font>
+						<p class="text-danger"><?echo $errore?></p>
 						<?php $_SESSION['errore_immagine'] = False;
 					echo "<br>";
 				}
@@ -299,7 +299,7 @@ if($nome == ""){
 				 document.getElementById('latitude').value = position.coords.latitude;
   				 document.getElementById('longitude').value = position.coords.longitude;
 				 infoWindow.setPosition(pos);
-				 infoWindow.setContent('<h2 class="text-center panel-title"><b>Posizione rilevata</b></h2>');
+				 infoWindow.setContent('<h2 class="text-center panel-title"><strong>Posizione rilevata</strong></h2>');
 				 infoWindow.open(map);
 				 map.setCenter(pos);
 			 }, function() {

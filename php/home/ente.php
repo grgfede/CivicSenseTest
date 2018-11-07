@@ -95,7 +95,7 @@ $elenco_squadre_disponibili = mysqli_query($connect,"select id_squadra,occupata 
       <div class="col-xl-6 col-sm-6 mb-3">
                   <!-- Example Notifications Card-->
           	<div class="card h-100" id="card-new-reports">
-            <div class="card-header"><i class="fa fa-bell-o"></i>&nbspNuove segnalazioni</div>
+            <div class="card-header"><em class="fa fa-bell-o"></em> &nbspNuove segnalazioni</div>
             <?if ($num_nuove_segnalazioni > 0){?>
             <div class="list-group list-group-flush small">
               <?
@@ -153,7 +153,7 @@ $elenco_squadre_disponibili = mysqli_query($connect,"select id_squadra,occupata 
         <div class="col-xl-6 col-sm-6 mb-3">
         <div class="card map" id="card-map">
 		<div class=" card-header">
-        	<i class="fa fa-map"></i>&nbsp; Mappa delle segnalazioni In lavorazione</div>
+        	<em class="fa fa-map"></em> &nbsp; Mappa delle segnalazioni In lavorazione</div>
         <div id="map" class="map"></div>
     	</div>
     	</div>
@@ -162,7 +162,7 @@ $elenco_squadre_disponibili = mysqli_query($connect,"select id_squadra,occupata 
 		<div class="col-xl-6 col-sm-6 mb-3">
 		<div class="card">
 		<div class="card-header">
-        	<i class="fa fa-gears"></i>&nbsp; In Lavorazione</div>
+        	<em class="fa fa-gears"></em> &nbsp; In Lavorazione</div>
 
 		<!--Creazione tabella dei CDT in lavorazione-->
 		<div class="table-responsive">
@@ -204,7 +204,7 @@ $elenco_squadre_disponibili = mysqli_query($connect,"select id_squadra,occupata 
       <div class="col-xl-6 col-sm-6 mb-3">
     <div class="card">
     <div class="card-header">
-          <i class="fa fa-check"></i>&nbsp; Risolte</div>
+          <em class="fa fa-check"></em> &nbsp; Risolte</div>
 
     <!--Creazione tabella dei CDT in lavorazione-->
     <div class="table-responsive">

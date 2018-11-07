@@ -7,16 +7,16 @@ if(isset($_SESSION["admin_name"]))
  header("location:index.php");
 }
 
-$member_password = "member_password";
+$memberp = "member_password";
 $member_login = "member_login";
 
 if(isset($_POST["login"]))
 {
- if(!empty($_POST["member_name"]) && !empty($_POST[$member_password]))
+ if(!empty($_POST["member_name"]) && !empty($_POST[$memberp]))
  {
 
   $name = mysqli_real_escape_string($connect, $_POST["member_name"]);
-  $password = md5(mysqli_real_escape_string($connect, $_POST[$member_password]));
+  $password = md5(mysqli_real_escape_string($connect, $_POST[$memberp]));
   $sql = "Select * from login where username = '" . $name . "' and password = '" . $password . "'";
   $result = mysqli_query($connect,$sql);
   $user = mysqli_fetch_array($result);
@@ -113,7 +113,7 @@ if(isset($_POST["login"]))
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input class="form-control" name="member_password" value="<?php if(isset($_COOKIE[$member_password])) { echo $_COOKIE[$member_password]; } ?>" type="password" placeholder="Password">
+            <input class="form-control" name="member_password" value="<?php if(isset($_COOKIE[$memberp])) { echo $_COOKIE[$memberp]; } ?>" type="password" placeholder="Password">
           </div>
           <button class="btn btn-primary btn-block" name="login">Login</button>
         </form>

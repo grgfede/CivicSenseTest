@@ -26,8 +26,6 @@
 		$sede_operativa = $cicle['sede_operativa'];
     $descrizione = $cicle['descrizione'];
 	}
-
-
 ?>
 
     <div class="container-fluid">
@@ -38,17 +36,6 @@
         </li>
         <li class="breadcrumb-item active">Il tuo profilo</li>
       </ol>
-
-     <!-- <div class="row"> -->
-       <!-- <div class="col-12">-->
-      <!--<div class="col-md-5  toppad  pull-right col-md-offset-3 ">
-           <--<A href="edit.html" >Edit Profile</A>
-
-        <A href="edit.html" >Logout</A>
-       <br>
-<p class=" text-info">May 05,2014,03:00 pm </p>
-      </div>-->
-
           <div class="card mb-3">
             <div class="card-header">
               <h3 class="panel-title">Il tuo profilo</h3>
@@ -60,54 +47,40 @@
                   <table class="table table-user-information">
                     <tbody>
                       <tr>
-                        <td><b>Denominazione</b></td>
+                        <td><strong>Denominazione</strong></td>
                         <td><?php echo $denominazione; ?></td>
                       </tr>
                       <tr>
-                        <td><b>Sede Legale</b></td>
+                        <td><strong>Sede Legale</strong></td>
                         <td><?php echo $sede_legale; ?></td>
                       </tr>
                       <tr>
-                        <td><b>Sede Operativa</b></td>
+                        <td><strong>Sede Operativa</strong></td>
                         <td><?php echo $sede_operativa; ?></td>
                       </tr>
                       <tr>
-                        <td><b>Email</b></td>
+                        <td><strong>Email</strong></td>
                         <td><a href="mailto:<? echo $email; ?>"><?php echo $email; ?></a></td>
                       </tr>
                       <tr>
                         <? if ($descrizione != ""){ ?>
                           <tr>
-                          <td><b>Descrizione</b></td>
+                          <td><strong>Descrizione</strong></td>
                           <td><?php echo $descrizione; ?></td>
                         </tr>
                       <? } else {
 
                       }?>
-
-
-					  <!--<tr>
-                        <td><b>Ticket inseriti</b></td>
-                        <td><?php echo $localita; ?></td>
-                      </tr>-->
-                        <!--<td><b>Phone Number</b></td>
-                        <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)
-                        </td>-->
                          </tr>
 
                     </tbody>
                   </table>
-
-                  <!--<a href="#" class="btn btn-primary">My Sales Performance</a>
-                  <a href="#" class="btn btn-primary">Team Sales Performance</a>-->
                 </div>
               </div>
             </div>
                  <div class="card-footer">
-                        <!--<a href="mailto:<? echo $email; ?>" data-original-title="Invia un messaggio privato" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="fa fa-fw fa-envelope"></i></a>-->
                         <span class="pull-right">
-                            <a href="editProfile.php" data-original-title="Modifica Profilo" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="fa fa-fw fa-edit"></i></a>
-                            <!--<a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="fa fa-fw fa-remove"></i></a>-->
+                            <a href="editProfile.php" data-original-title="Modifica Profilo" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><em class="fa fa-fw fa-edit"></em></a>
                         </span>
                     </div>
           </div>

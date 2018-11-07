@@ -68,7 +68,7 @@ include "php/dbconnection_session.php";
 										<?php
 											$errore = "Inserisci un identificativo per la squadra";
 											if($_SESSION['erroreId']){?>
-												<font color=red size=2><?echo $errore?></font>
+												<p class="text-danger"><?echo $errore?></p>
 												<?$_SESSION['erroreUsername'] = False;
 											}?>
 		                <input type="text" name="id_squadra" class="form-control" placeholder="Nome squadra risoluzione">
@@ -81,7 +81,7 @@ include "php/dbconnection_session.php";
 										<?php
 											$errore = "Inserisci email del capo squadra";
 											if($_SESSION['erroreMail']){?>
-												<font color=red size=2><?echo $errore?></font>
+												<p class="text-danger"><?echo $errore?></p>
 												<?$_SESSION['erroreMail'] = False;
 											}
 										?>
@@ -95,7 +95,7 @@ include "php/dbconnection_session.php";
 										<?php
 											$errore = "Inserisci username del capo squadra";
 											if($_SESSION['errorePassword']){?>
-												 <font color=red size=2><?echo $errore?></font>
+												 <p class="text-danger"><?echo $errore?></p>
 												<?$_SESSION['errorePassword'] = False;
 											}
 										?>

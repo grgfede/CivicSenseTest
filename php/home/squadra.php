@@ -33,7 +33,7 @@ $_SESSION['cdt_link'] = (isset($segnalazione))? "detailTicket.php?id=".$segnalaz
 		<div class="row">
 			<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 mb-3">
 				<div class="card h-100">
-					<div class="card-header"><i class="fa fa-info-circle"></i>&nbsp;Dettagli segnalazione</div>
+					<div class="card-header"><em class="fa fa-info-circle"></em> &nbsp;Dettagli segnalazione</div>
 
 					<?if (isset($segnalazione)){?>
 
@@ -48,23 +48,23 @@ $_SESSION['cdt_link'] = (isset($segnalazione))? "detailTicket.php?id=".$segnalaz
 						</div>
             <div class="row mb-3">
               <div class="col-12 col-sm-6 col-md-6 col-xl-6">
-                <b>Categoria: </b><?echo utf8_encode($segnalazione['categoria']);?>
+                <strong>Categoria: </strong><?echo utf8_encode($segnalazione['categoria']);?>
               </div>
               <div class="col-12 col-sm-6 col-md-6 col-xl-6">
-                <b>Data creazione: </b><?echo date("d-m-Y", strtotime($segnalazione['data_creazione']));?>
+                <strong>Data creazione: </strong><?echo date("d-m-Y", strtotime($segnalazione['data_creazione']));?>
               </div>
             </div>
             <div class="row mb-3">
               <div class="col-12 col-sm-6 col-md-6 col-xl-6">
-                <b>Citt&agrave: </b><?echo utf8_encode($segnalazione['citta']);?>
+                <strong>Citt&agrave: </strong><?echo utf8_encode($segnalazione['citta']);?>
               </div>
               <div class="col-12 col-sm-6 col-md-6 col-xl-6">
-                <b>Indirizzo: </b><?echo utf8_encode($segnalazione['indirizzo']);?>
+                <strong>Indirizzo: </strong><?echo utf8_encode($segnalazione['indirizzo']);?>
               </div>
             </div>
 						<div class="row mb-3">
 							<div class="col-12">
-							<p class="mb-3"><b>Descrizione</b></p>
+							<p class="mb-3"><strong>Descrizione</strong></p>
 								<textarea class="form-control" style="min-height: 150px;" readonly><?echo utf8_encode($segnalazione['descrizione']);?></textarea>
 							</div>
 						</div>
@@ -105,7 +105,7 @@ $_SESSION['cdt_link'] = (isset($segnalazione))? "detailTicket.php?id=".$segnalaz
 			</div>
 			<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 mb-3">
 				<div class="card h-100">
-					<div class="card-header"><i class="fa fa-map"></i>&nbsp;Luogo della segnalazione</div>
+					<div class="card-header"><em class="fa fa-map"></em> &nbsp;Luogo della segnalazione</div>
 						<div class="map" id="map"></div>
 				</div>
 			</div>
@@ -113,7 +113,7 @@ $_SESSION['cdt_link'] = (isset($segnalazione))? "detailTicket.php?id=".$segnalaz
 		<div class="row">
 			<div class="col-12 mb-3">
 				<div class="card">
-					<div class="card-header"><i class="fa fa-check"></i>&nbsp;Segnalazioni completate</div>
+					<div class="card-header"><em class="fa fa-check"></em> &nbsp;Segnalazioni completate</div>
 					<div class="card-body">
 						<div class="row">
 							<div class="col-12">

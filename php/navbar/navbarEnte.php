@@ -25,21 +25,21 @@
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="index.php">
-            <i class="fa fa-fw fa-dashboard"></i>
+            <em class="fa fa-fw fa-dashboard"></em> 
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
 <!--SECONDO ITEM-->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Segnalazione">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseSegnalazione" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-exclamation-circle"></i>
+            <em class="fa fa-fw fa-exclamation-circle"></em> 
             <span class="nav-link-text">Segnalazione</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseSegnalazione">
         <!--SOTTOITEM-->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Segnalazioni seguite">
           <a class="nav-link" href="logReports.php">
-            <i class="fa fa-fw fa-list"></i>
+            <em class="fa fa-fw fa-list"></em> 
             <span class="nav-link-text">Storico segnalazioni</span>
           </a>
         </li>
@@ -48,7 +48,7 @@
 
 		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Profilo">
           <a class="nav-link" href="profile.php">
-            <i class="fa fa-user-circle"></i>
+            <em class="fa fa-user-circle"></em> 
             <span class="nav-link-text">Profilo</span>
           </a>
         </li>
@@ -56,7 +56,7 @@
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Gestisci squadre">
           <a class="nav-link" href="myTeams.php">
-            <i class="fa fa-fw fa-users"></i>
+            <em class="fa fa-fw fa-users"></em> 
             <span class="nav-link-text">Gestisci squadre</span>
           </a>
         </li>
@@ -64,7 +64,7 @@
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
           <a class="nav-link text-center" id="sidenavToggler">
-            <i class="fa fa-fw fa-angle-left"></i>
+            <em class="fa fa-fw fa-angle-left"></em> 
           </a>
         </li>
       </ul>
@@ -75,7 +75,7 @@
                  <input class="form-control" type="text" name="chiave" placeholder="Cerca CDT...">
                <span class="input-group-append">
                  <button class="btn btn-primary">
-                  <i class="fa fa-search"></i>
+                  <em class="fa fa-search"></em> 
                 </button>
               </span>
             </div>
@@ -84,10 +84,10 @@
         <li class="nav-item">
           <?if ($nome == "Ospite"){?>
           <a href="" class="nav-link" data-toggle="modal" data-target="#modalLogin">&nbspLogin
-            <i class="fa fa-fw fa-sign-in"></i></a>
+            <em class="fa fa-fw fa-sign-in"></em> </a>
             <?} else {?>
           <a href="" class="nav-link" data-toggle="modal" data-target="#modalLogout">&nbspLogout
-            <i class="fa fa-fw fa-sign-out"></i></a>
+            <em class="fa fa-fw fa-sign-out"></em> </a>
               <?}?>
         </li>
       </ul>
