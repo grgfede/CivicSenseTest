@@ -200,7 +200,7 @@ $num_allegati = mysqli_num_rows($allegati_segnalazione);
     <? $j=0 ?>
     <? while($allegato = mysqli_fetch_array($allegati_segnalazione)){?>
       <div class="carousel-item <?if($j==0){echo "active";}?>">
-        <img class="d-block w-100" style="max-height:300px" src="data:image/jpeg;base64,<?echo $allegato['allegato'];?>">
+        <img class="d-block w-100" alt="allegato" style="max-height:300px" src="data:image/jpeg;base64,<?echo $allegato['allegato'];?>">
       </div>
     <? 
       ++$j;

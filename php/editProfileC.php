@@ -7,6 +7,8 @@ include "dbconnection_session.php";
 
 	$_SESSION['errore_password'] = false;
 
+	$passwordText1 ='passwordText1';
+
 	$nome = $_SESSION['nomeUtente'];
 	$cognome = $_SESSION['cognome'];
 	$localita = $_SESSION['localita'];
@@ -47,12 +49,12 @@ include "dbconnection_session.php";
 			echo "mail";
 			$controllo = true;
 		}
-		if ($_POST['passwordText1'] == $_POST['passwordText2']){
-			$password = $_POST['passwordText1'];
+		if ($_POST[$passwordText1] == $_POST['passwordText2']){
+			$password = $_POST[$passwordText1];
 			$passwordNuova = md5($password);
 			$controllo = true;
 
-		} elseif ($_POST['passwordText1'] != $_POST['passwordText2']) {
+		} elseif ($_POST[$passwordText1] != $_POST['passwordText2']) {
 			$_SESSION['errore_password'] = true;
 			$passErrate = true;
 		}

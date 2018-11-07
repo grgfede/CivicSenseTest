@@ -21,11 +21,6 @@ if(isset($_POST["login"]))
 
   if($user)
   {
-   if(!empty($_POST["remember"]))
-   {
-    setcookie ("member_login",$name,time()+ 60*60*7);
-    setcookie ("member_password",$password,time()+ 60 * 60 * 7);
-   }
    $_SESSION["admin_name"] = $name;
    $_SESSION["tipo"] = $user['tipo'];
 
@@ -52,7 +47,7 @@ if(isset($_POST["login"]))
       $query = "select * from ente where id_ente = '$name'";
       $query_esegui = mysqli_query($connect, $query);
       while($record = mysqli_fetch_array($query_esegui)){
-        $_SESSION['e_ragione_sociale'] = $record['ragione_sociale'];
+        $_SESSION['e_denominazione'] = $record['denominazione'];
         $_SESSION['e_email'] = $record['email'];
         $_SESSION['e_descrizione'] = $record['descrizione'];
         $_SESSION['e_logo'] = $record['logo'];
@@ -63,10 +58,7 @@ if(isset($_POST["login"]))
       $query_esegui = mysqli_query($connect, $query);
       while($record = mysqli_fetch_array($query_esegui)){
         $_SESSION['s_nome_squadra'] = $record['nome_squadra'];
-        $_SESSION['s_competenza'] = $record['competenza'];
-        $_SESSION['s_regione'] = $record['regione'];
-        $_SESSION['s_provincia'] = $record['provincia'];
-        $_SESSION['s_comune'] = $record['comune'];
+        $_SESSION['s_email'] = $record['email_capo'];
       }
       break;
    }
@@ -118,12 +110,6 @@ if(isset($_POST["login"]))
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
             <input class="form-control" name="member_password" value="<?php if(isset($_COOKIE["member_password"])) { echo $_COOKIE["member_password"]; } ?>" type="password" placeholder="Password">
-          </div>
-          <div class="form-group">
-            <div class="form-check">
-              <label class="form-check-label">
-                <input class="form-check-input" name="remember" <?php if(isset($_COOKIE["member_login"])) { ?> checked <?php } ?> type="checkbox"> Ricordami</label>
-            </div>
           </div>
           <button class="btn btn-primary btn-block" name="login">Login</button>
         </form>

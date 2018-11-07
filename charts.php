@@ -31,7 +31,7 @@
       <!-- Area Chart Example--> 
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-area-chart"></i> Numero di segnalazioni al giorno</div>
+          <em class="fa fa-area-chart"></em> Numero di segnalazioni al giorno</div>
         <div class="card-body">
           <canvas id="myAreaChart" width="100%" height="30"></canvas>
         </div>
@@ -42,7 +42,7 @@
           <!-- Example Bar Chart Card-->
           <div class="card mb-3">
             <div class="card-header">
-              <i class="fa fa-bar-chart"></i> Numero di segnalazioni risolte</div>
+              <em class="fa fa-bar-chart"></em> Numero di segnalazioni risolte</div>
             <div class="card-body">
               <canvas id="myBarChart" width="100" height="50"></canvas>
             </div>
@@ -53,7 +53,7 @@
           <!-- Example Pie Chart Card-->
           <div class="card mb-3">
             <div class="card-header">
-              <i class="fa fa-pie-chart"></i> Tipo di segnalazioni</div>
+              <em class="fa fa-pie-chart"></em> Tipo di segnalazioni</div>
             <div class="card-body">
               <canvas id="myPieChart" width="100%" height="100"></canvas>
             </div>

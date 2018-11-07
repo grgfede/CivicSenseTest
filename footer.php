@@ -7,7 +7,7 @@
     </footer>
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fa fa-angle-up"></i>
+      <em class="fa fa-angle-up"></em>
     </a>
     <!-- Login / Logout Modal-->
 <? include "php/modalLoginLogout.php";?>

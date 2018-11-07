@@ -6,20 +6,13 @@
 	#	3 Modifichi del codice e non funziona? RIMETTI TUTTO A POSTO				#
 	#	4 Hai dubbi su qualche parte del codice? NON METTERE MANI					#
 	#	5 CERCA DI COMMENTARE CODICE CHE APPARE COMPLICATO AL RESTO DEL GRUPPO		#
-	#																				#
-	#  Chi infrange le regole siamo obbligati a dare della puttana alla madre		#
-	#  Buon lavoro :)																#
 	#################################################################################
 -->
-
-
-
 
 <?php
 
 // Inialize session
 include "php/dbconnection_session.php";
-	//mysql_set_charset('utf8', $db_connection);
 	$id = $_GET['id'];
   $_SESSION['id'] = $id;
 
@@ -127,9 +120,9 @@ include "php/dbconnection_session.php";
           <? if ($_SESSION['tipo'] == 1){ ?>
           	<div class="col-1">
 							<? if ($riga > 0){?>
-								<button class="float-right" onclick="unfollow(<? echo $id; ?>, '<? echo $nome;?>')" style="border:none; background: none"><i class="fa fa-star fa-2x" style="color:yellow"></i></button>
+								<button class="float-right" onclick="unfollow(<? echo $id; ?>, '<? echo $nome;?>')" style="border:none; background: none"><em class="fa fa-star fa-2x" style="color:yellow"></em></button>
 							<?} else {?>
-								<button class="float-right" onclick="follow(<? echo $id; ?>, '<? echo $nome;?>')" style="border:none; background: none"><i class="fa fa-star-o fa-2x" style="color:black"></i></button>
+								<button class="float-right" onclick="follow(<? echo $id; ?>, '<? echo $nome;?>')" style="border:none; background: none"><em class="fa fa-star-o fa-2x" style="color:black"></em></button>
 								<?}?>
 							</div>
               <?}?>
@@ -145,7 +138,7 @@ include "php/dbconnection_session.php";
           </div>
           <div class="col-xl-4 col-sm-4 md-4">
 						<div class="row">
-                 <b>Data creazione:&nbsp; </b>
+                 <strong>Data creazione:&nbsp; </strong>
                     <?php
                       if($righe_res == 0){
                         $newDate = "";
@@ -158,13 +151,13 @@ include "php/dbconnection_session.php";
                 ?>
 						</div>
 						<div class="row">
-                	<b>Citt&agrave:&nbsp; </b><?php echo $array['citta']; ?>
+                	<strong>Citt&agrave:&nbsp; </strong><?php echo $array['citta']; ?>
 						</div>
 						<div class="row">
-                  <b>Indirizzo:&nbsp; </b> <?php echo $array['indirizzo']; ?>
+                  <strong>Indirizzo:&nbsp; </strong> <?php echo $array['indirizzo']; ?>
 						</div>
 						<div class="row">
-                  <b>Categoria:&nbsp; </b> <?php echo utf8_encode($array['categoria']); ?>
+                  <strong>Categoria:&nbsp; </strong> <?php echo utf8_encode($array['categoria']); ?>
 						</div>
           </div>
         </div>
@@ -201,7 +194,7 @@ include "php/dbconnection_session.php";
 			    <? $j=0 ?>
 			    <? while($allegato = mysqli_fetch_array($queryImg)){?>
 			      <div class="carousel-item bg-dark card <?if($j==0){echo "active";}?>">
-			        <img class="d-block h-100 mx-auto" style="max-height: 300px;" src="data:image/jpeg;base64,<?echo $allegato['allegato'];?>">
+			        <img class="d-block h-100 mx-auto" alt="allegato" style="max-height: 300px;" src="data:image/jpeg;base64,<?echo $allegato['allegato'];?>">
 			      </div>
 			    <?
 			      ++$j;
@@ -225,11 +218,9 @@ include "php/dbconnection_session.php";
     <?
       if ($_SESSION['tipo'] == 2){?>
 		<div class="card-footer">
-			<!--<a href="mailto:<? echo $email; ?>" data-original-title="Invia un messaggio privato" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="fa fa-fw fa-envelope"></i></a>-->
-          <span class="pull-right">
-    			<a href="editTicket.php" data-original-title="Modifica Segnalazione" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="fa fa-fw fa-edit"></i></a>
 
-      <!--<a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="fa fa-fw fa-remove"></i></a>-->
+          <span class="pull-right">
+    			<a href="editTicket.php" data-original-title="Modifica Segnalazione" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><em class="fa fa-fw fa-edit"></em></a>
 			</span>
 		</div>
     <?}?>

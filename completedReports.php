@@ -99,13 +99,13 @@ if($riga == 0){
 <?php 
     
     $count = 1;  //VARIABILE PER CONTARE I TICKET NELLA TABELLA
-    
+    const td_a = "<td>", td_c = "</td>";
     while($cicle=mysqli_fetch_array($risultato)){
       echo '<tr><td><b>'.$count++.'</b></td>';
-      echo '<td>'.$cicle['cdt'].'</td>';
+      echo td_a.$cicle['cdt'].td_c;
       echo '<td><a href="detailTicket.php?id='.$cicle['cdt'].'">'.$cicle['nome_evento'].'</a></td>';
-      echo '<td>'.$cicle['citta'].'</td>';
-      echo '<td>'.$cicle['indirizzo'].'</td>';
+      echo td_a.$cicle['citta'].td_c;
+      echo td_a.$cicle['indirizzo'].td_c;
 
       $gravita = $cicle['gravita'];
         switch($gravita){
@@ -118,17 +118,19 @@ if($riga == 0){
           case 3:
             $gravita_colore="red.png";
             break;
+            default:
+            break;
         }?>
 
       <td><div class="d-flex mr-3 rounded-circle w-30 h-30 gravita" style="background-image: url('images/icons/<?echo $gravita_colore?>');"></div></td>
       <?
-      echo "<td>".$cicle['descrizione']."</td>";
+      echo td_a.$cicle['descrizione'].td_c;
       $data_presa_carico = $cicle['data_presa_carico'];
       $data_presa_carico = date("d-m-Y", strtotime($data_presa_carico));
-      echo "<td>".$data_presa_carico."</td>";
+      echo td_a.$data_presa_carico.td_c;
       $data_completamento = $cicle['data_completamento'];
       $data_completamento = date("d-m-Y", strtotime($data_completamento));
-      echo "<td>".$data_completamento."</td>";
+      echo td_a.$data_completamento.td_c;
       echo "</tr>";   
       }
 ?>

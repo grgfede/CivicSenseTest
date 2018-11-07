@@ -112,7 +112,7 @@ function randomPassword() {
 
     for ($i = 0; $i < 15; $i++) {
 
-        $n = rand(0, $alphaLength);
+        $n = random_int(0, $alphaLength);
 
         $pass[] = $alphabet[$n];
 

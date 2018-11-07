@@ -1,14 +1,11 @@
 <!--
 	#################################################################################
-	#		REGOLE PER UNA BUONA PERMANENZA DI GRUPPO																		#
-	#	1 Se scrivi del nuovo codice, COMMENTA QUELLO CHE FAI													#
-	#	2 Modifichi del codice? COMMENTA LA MODIFICA																	#
-	#	3 Modifichi del codice e non funziona? RIMETTI TUTTO A POSTO									#
-	#	4 Hai dubbi su qualche parte del codice? NON METTERE MANI											#
-	#	5 CERCA DI COMMENTARE CODICE CHE APPARE COMPLICATO AL RESTO DEL GRUPPO				#
-	#																																								#
-	#  Chi infrange le regole siamo obbligati a dare della puttana alla madre				#
-	#  Buon lavoro :)																																#
+	#		REGOLE PER UNA BUONA PERMANENZA DI GRUPPO								#
+	#	1 Se scrivi del nuovo codice, COMMENTA QUELLO CHE FAI						#
+	#	2 Modifichi del codice? COMMENTA LA MODIFICA								#
+	#	3 Modifichi del codice e non funziona? RIMETTI TUTTO A POSTO				#
+	#	4 Hai dubbi su qualche parte del codice? NON METTERE MANI					#
+	#	5 CERCA DI COMMENTARE CODICE CHE APPARE COMPLICATO AL RESTO DEL GRUPPO		#
 	#################################################################################
 -->
 
@@ -17,12 +14,14 @@
 include "php/Segnalazione.php";
 include "php/dbconnection_session.php";
 
+$admin_name = 'admin_name';
+$id_squadra = 'id_squadra';
 // Check, if username session is NOT set then this page will jump to login page
-if (!isset($_SESSION['admin_name'])) {
+if (!isset($_SESSION[$admin_name])) {
 header('Location: index.html');
 }
 
-$nome = $_SESSION['admin_name'];
+$nome = $_SESSION[$admin_name];
 
 //VALORI DI DEFAULT PER ACCEDERE AL SITO COME OSPITE
 	if ($nome == ""){
@@ -135,7 +134,7 @@ $nome = $_SESSION['admin_name'];
   		</div>
   		<div class="col-12 col-sm-4 d-flex align-items-center">
       	<a class="btn bg-success ml-auto" href="newTeam.php">
-         <i class="fa fa-fw fa-plus text-white"></i><span class="text-white">Crea squadra</span>
+         <em class="fa fa-fw fa-plus text-white"></em> <span class="text-white">Crea squadra</span>
         </a>
     	</div>
        </div>
@@ -144,7 +143,7 @@ $nome = $_SESSION['admin_name'];
         <div class="col-xl-12 col-sm-12 mb-3">
           <div class="card">
           <div class="card-header">
-                <i class="fa fa-gears"></i>&nbsp; Le mie squadre
+                <em class="fa fa-gears"></em> &nbsp; Le mie squadre
           </div>
 
           <!--Creazione tabella dei CDT in lavorazione-->
@@ -165,11 +164,11 @@ $nome = $_SESSION['admin_name'];
   $esegui = mysqli_query($connect, $querySquadre);
   $riga = mysqli_num_rows($esegui);
   while($cicle=mysqli_fetch_array($esegui)){ ?>
-    <tr><td><b><? echo $count++; ?></b></td>
-    <td> <? echo $cicle['id_squadra']; ?></td>
+    <tr><td><strong><? echo $count++; ?></strong></td>
+    <td> <? echo $cicle[$id_squadra]; ?></td>
 		<td> <? echo $cicle['email_capo']; ?></td>
-    <td><button onclick="deleteTeam('<? echo $cicle['id_squadra'];?>', '<? echo $nome;?>')" style="background: none; border:none"><i class="fa fa-fw fa-trash"></i></button>
-    <button onclick="memory_team('<? echo $cicle['id_squadra']; ?>')"data-toggle="modal" data-target="#ModalResolutionTeam" style="background:none; border:none"><i class="fa fa-edit"></i></button></td></tr>
+    <td><button onclick="deleteTeam('<? echo $cicle[$id_squadra];?>', '<? echo $nome;?>')" style="background: none; border:none"><em class="fa fa-fw fa-trash"></em> </button>
+    <button onclick="memory_team('<? echo $cicle[$id_squadra]; ?>')"data-toggle="modal" data-target="#ModalResolutionTeam" style="background:none; border:none"><em class="fa fa-edit"></em> </button></td></tr>
   <?}
   ?>
                     </tbody>
@@ -205,7 +204,7 @@ $nome = $_SESSION['admin_name'];
 	      </div>
 
 	      <div class="modal-footer">
-	        <button class="btn btn-primary" id="assign" type="button" onclick="modify_team('<?echo $_SESSION['admin_name']?>',selected_team, document.getElementById('idTeam').value, document.getElementById('passTeam').value, document.getElementById('emailTeam').value)">Modifica</button>
+	        <button class="btn btn-primary" id="assign" type="button" onclick="modify_team('<?echo $_SESSION[$admin_name]?>',selected_team, document.getElementById('idTeam').value, document.getElementById('passTeam').value, document.getElementById('emailTeam').value)">Modifica</button>
 	        <button class="btn btn-secondary" id="undo" type="button" data-dismiss="modal">Annulla</button>
 	      </div>
 

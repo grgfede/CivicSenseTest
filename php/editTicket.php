@@ -1,5 +1,4 @@
 <?php
-  session_start();
 
   include "dbconnection_session.php";
 
@@ -37,7 +36,6 @@
   $sqlEsegui = mysqli_query($connect, $sql);
   if($sqlEsegui){?>
     <script>
-      alert("Segnalazione modificata con successo!");
       window.location.replace("../detailTicket.php?id=<? echo $id;?>");
     </script>
   <?}

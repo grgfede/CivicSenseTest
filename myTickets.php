@@ -16,13 +16,14 @@
 // Inialize session
 include "php/dbconnection_session.php";
 
+  $admin_name = 'admin_name';
+
 // Check, if username session is NOT set then this page will jump to login page
-if (!isset($_SESSION['admin_name'])) {
+if (!isset($_SESSION[$admin_name])) {
 header('Location: index.html');
 }
 
-
-	$nome = $_SESSION['admin_name'];
+	$nome = $_SESSION[$admin_name];
 	$query = "SELECT * FROM crea_segue where id_cittadino = '$nome'";
 	$risultato = mysqli_query($connect, $query);
 	$righe = mysqli_num_rows($risultato);
@@ -101,7 +102,7 @@ header('Location: index.html');
 		$db_selection = mysql_select_db(my_civicsense2018,$db_connection);
 
 		$count = 1;  //VARIABILE PER CONTARE I TICKET NELLA TABELLA
-		$nomeUtente = $_SESSION['admin_name'];
+		$nomeUtente = $_SESSION[$admin_name];
 
 		$query = mysql_query("SELECT * FROM crea_segue inner join segnalazione on crea_segue.cdt = segnalazione.cdt where crea_segue.id_cittadino = '$nomeUtente'");
 

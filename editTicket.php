@@ -1,14 +1,11 @@
 <!--
 	#################################################################################
-	#		REGOLE PER UNA BUONA PERMANENZA DI GRUPPO								#
-	#	1 Se scrivi del nuovo codice, COMMENTA QUELLO CHE FAI						#
-	#	2 Modifichi del codice? COMMENTA LA MODIFICA								#
-	#	3 Modifichi del codice e non funziona? RIMETTI TUTTO A POSTO				#
-	#	4 Hai dubbi su qualche parte del codice? NON METTERE MANI					#
-	#	5 CERCA DI COMMENTARE CODICE CHE APPARE COMPLICATO AL RESTO DEL GRUPPO		#
-	#																				#
-	#  Chi infrange le regole siamo obbligati a dare della puttana alla madre		#
-	#  Buon lavoro :)																#
+	#		REGOLE PER UNA BUONA PERMANENZA DI GRUPPO								                    #
+	#	1 Se scrivi del nuovo codice, COMMENTA QUELLO CHE FAI				              		#
+	#	2 Modifichi del codice? COMMENTA LA MODIFICA							                  	#
+	#	3 Modifichi del codice e non funziona? RIMETTI TUTTO A POSTO		           		#
+	#	4 Hai dubbi su qualche parte del codice? NON METTERE MANI				            	#
+	#	5 CERCA DI COMMENTARE CODICE CHE APPARE COMPLICATO AL RESTO DEL GRUPPO		    #
 	#################################################################################
 -->
 
@@ -19,7 +16,6 @@ include "php/dbconnection_session.php";
 //SE NON SEI UN ENTE NON SEI AUTORIZZATO
 if($_SESSION['tipo'] != 2){?>
   <script>
-      alert("Non sei autorizzato!");
       window.location.replace("index.php");
   </script>
   <?}
@@ -33,11 +29,14 @@ $array = mysqli_fetch_array($sqlResumeEsegui);
 $sqlCategorie = "select * from categoria";
 $categorieEsegui = mysqli_query($connect, $sqlCategorie);
 
-
-$_SESSION['titolo'] = $array['nome_evento'];
-$_SESSION['gravita'] = $array['gravita'];
-$_SESSION['descrizione'] = $array['descrizione'];
-$_SESSION['categoria'] = $array['categoria'];
+$nome_evento = $array['nome_evento'];
+$_SESSION['titolo'] = $nome_evento;
+$gravita = $array['gravita'];
+$_SESSION['gravita'] = $gravita;
+$descrizione = $array['descrizione'];
+$_SESSION['descrizione'] = $descrizione;
+$categoria = $array['categoria'];
+$_SESSION['categoria'] = $categoria;
 ?>
 
 
@@ -84,7 +83,7 @@ $_SESSION['categoria'] = $array['categoria'];
           <a href="index.php">Dashboard</a>
         </li>
         <? if ($_SESSION['tipo'] == 1) {?><li class="breadcrumb-item"><a href="myTickets.php">Le tue segnalazioni</a><?}?></li>
-        	<li class="breadcrumb-item"><a href="detailTicket.php?id=<?echo $id_cdt;?>"><?php echo $array['nome_evento']; ?></a></li>
+        	<li class="breadcrumb-item"><a href="detailTicket.php?id=<?echo $id_cdt;?>"><?php echo $nome_evento; ?></a></li>
           <li class="breadcrumb-item active">
               Modifica Segnalazione
           </li>
@@ -103,11 +102,11 @@ $_SESSION['categoria'] = $array['categoria'];
 			<div class="card-body">
         <div class="row">
           <div class="col-xl-8 col-sm-8 md-8">
-                <h5>Titolo:</h5><input type="text" name="newTitolo" id="newTitolo" class="form-control" value="<? echo $array['nome_evento'];?>" style="width: 300px;">
+                <h5>Titolo:</h5><input type="text" name="newTitolo" id="newTitolo" class="form-control" value="<? echo $nome_evento;?>" style="width: 300px;">
           </div>
           <div class="col-xl-4 col-sm-4 md-4">
             <div class="col-xl-12 col-sm-12 md-12">
-            <b>Data creazione:</b>
+            <strong>Data creazione:</strong>
               <?php
                 if($riga == 0){
                   $newDate = "";
@@ -120,15 +119,15 @@ $_SESSION['categoria'] = $array['categoria'];
               ?>
             </div>
             <div class="col-xl-12 col-sm-12 md-12">
-              <b>Posizione:</b> <?php echo $array['citta']; ?>
+              <strong>Posizione:</strong> <?php echo $array['citta']; ?>
             </div>
             <div class="col-xl-12 col-sm-12 md-12">
-              <b>Indirizzo:</b> <?php echo $array['indirizzo']; ?>
+              <strong>Indirizzo:</strong> <?php echo $array['indirizzo']; ?>
             </div>
             <div class="col-xl-12 col-sm-12 md-12">
-              <b>Categoria:</b>
+              <strong>Categoria:</strong>
               <select style="width: 200px" class="form-control" id="newCat" name="newCat">
-                <option><?php echo utf8_encode($array['categoria']); ?></option>
+                <option><?php echo utf8_encode($categoria); ?></option>
                 <? while ($arrayCat = mysqli_fetch_array($categorieEsegui)){
                   echo "<option>".utf8_encode($arrayCat['nome']) . "</option>";
                 }?>
@@ -144,18 +143,18 @@ $_SESSION['categoria'] = $array['categoria'];
           <div class="col-xl-12 col-sm-12 md-12">
             <div class="control-group">
                <label class="control control-radio">
-                  <a data-toggle="tooltip" title="Il problema non viene considerato di grande rilievo. Si concentra un'attenzione minore."><font color=green><b>Bassa</b></font></a>
-                  <input type="radio" name="radio" value = 1 <?if ($array['gravita'] == 1){?>checked="checked"<?}?>/>
+                  <a data-toggle="tooltip" class="text-success" title="Il problema non viene considerato di grande rilievo. Si concentra un'attenzione minore."><strong>Bassa</strong></a>
+                  <input type="radio" name="radio" value = 1 <?if ($gravita == 1){?>checked="checked"<?}?>/>
                   <div class="control_indicator"></div>
                 </label>
                <label class="control control-radio">
-                  <a data-toggle="tooltip" title="Il problema potrebbe recare disturbo se non risolto."><b><font color="#fbc531">Media</font></b></a>
-                  <input type="radio" name="radio" value = 2 <?if ($array['gravita'] == 2){?>checked="checked"<?}?>/>
+                  <a data-toggle="tooltip" class="text-warning" title="Il problema potrebbe recare disturbo se non risolto."><strong>Media</strong></a>
+                  <input type="radio" name="radio" value = 2 <?if ($gravita == 2){?>checked="checked"<?}?>/>
                   <div class="control_indicator"></div>
                </label>
                <label class="control control-radio">
-                  <a data-toggle="tooltip" title="Il problema &egrave; assolutamente da risolvere."><font color=red><b>Alta</b></font></a>
-                  <input type="radio" name="radio" value = 3 <?if ($array['gravita'] == 3){?>checked="checked"<?}?> />
+                  <a data-toggle="tooltip" class="text-danger" title="Il problema &egrave; assolutamente da risolvere."><strong>Alta</strong></a>
+                  <input type="radio" name="radio" value = 3 <?if ($gravita == 3){?>checked="checked"<?}?> />
                   <div class="control_indicator"></div>
                </label>
             </div>
@@ -168,7 +167,7 @@ $_SESSION['categoria'] = $array['categoria'];
           </div>
 
           <div class="col-xl-12 col-sm-12 md-12">
-            <textarea name="newDescrizione" class="mb-3"> <?php echo $array['descrizione']; ?></textarea>
+            <textarea name="newDescrizione" class="mb-3"> <?php echo $descrizione; ?></textarea>
           </div>
         </div>
 
@@ -195,10 +194,8 @@ $_SESSION['categoria'] = $array['categoria'];
             <?	}	?>
 		</div>
 		<div class="card-footer">
-			<!--<a href="mailto:<? echo $email; ?>" data-original-title="Invia un messaggio privato" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="fa fa-fw fa-envelope"></i></a>-->
 			<span class="pull-right">
-			<button data-original-title="Modifica Profilo" data-toggle="tooltip" class="btn btn-sm btn-success"><i class="fa fa-fw fa-check text-white"></i></button>
-			<!--<a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="fa fa-fw fa-remove"></i></a>-->
+			<button data-original-title="Modifica Profilo" data-toggle="tooltip" class="btn btn-sm btn-success"><em class="fa fa-fw fa-check text-white"></em></button>
 			</span>
 		</div>
 

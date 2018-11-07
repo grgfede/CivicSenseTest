@@ -88,13 +88,13 @@ if($nome == ""){
     </script>
 <!--- FINE SCRIPT JS --->
 
-<!--SOVRASCRIVO custom-file-text PER AVERE LA SCRITTA SFOGLIA
+<!--SOVRASCRIVO custom-file-text PER AVERE LA SCRITTA SFOGLIA-->
 <style type="text/css">
 	$custom-file-text: (
   en: "Browse",
   it: "Sfoglia"
 );
-</style>-->
+</style>
 
 </head>
 

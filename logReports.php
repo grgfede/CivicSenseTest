@@ -1,14 +1,11 @@
 <!--
   #################################################################################
-  #   REGOLE PER UNA BUONA PERMANENZA DI GRUPPO     #
-  # 1 Se scrivi del nuovo codice, COMMENTA QUELLO CHE FAI     #
-  # 2 Modifichi del codice? COMMENTA LA MODIFICA        #
-  # 3 Modifichi del codice e non funziona? RIMETTI TUTTO A POSTO    #
-  # 4 Hai dubbi su qualche parte del codice? NON METTERE MANI   #
-  # 5 CERCA DI COMMENTARE CODICE CHE APPARE COMPLICATO AL RESTO DEL GRUPPO  #
-  #                   #
-  #  Chi infrange le regole siamo obbligati a dare della puttana alla madre #
-  #  Buon lavoro :)               #
+  #   REGOLE PER UNA BUONA PERMANENZA DI GRUPPO                                   #
+  # 1 Se scrivi del nuovo codice, COMMENTA QUELLO CHE FAI                         #
+  # 2 Modifichi del codice? COMMENTA LA MODIFICA                                  #
+  # 3 Modifichi del codice e non funziona? RIMETTI TUTTO A POSTO                  #
+  # 4 Hai dubbi su qualche parte del codice? NON METTERE MANI                     #
+  # 5 CERCA DI COMMENTARE CODICE CHE APPARE COMPLICATO AL RESTO DEL GRUPPO        #
   #################################################################################
 -->
 <?php
@@ -67,7 +64,7 @@ if($riga == 0){
         <div class="col">
           <div class="card h-100">
             <div class="card-header">
-                <i class="fa fa-gears"></i>&nbsp; Lista segnalazioni in lavorazione / Risolte
+                <em class="fa fa-gears"></em>&nbsp; Lista segnalazioni in lavorazione / Risolte
             </div>
 <?php
   if ($errorevuoto) { ?>
@@ -102,7 +99,7 @@ if($riga == 0){
     $i = 1;  //VARIABILE PER CONTARE I TICKET NELLA TABELLA
     
     while($cicle=mysqli_fetch_array($risultato)){?>
-      <tr><td><b><?echo $i++;?></b></td>
+      <tr><td><strong><?echo $i++;?></strong></td>
       <td><?echo $cicle['cdt'];?></td>
       <td><a href="detailTicket.php?id=<?echo $cicle['cdt']?>">
         <?echo $cicle['nome_evento']?>

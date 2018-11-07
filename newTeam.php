@@ -6,9 +6,7 @@
 	#	3 Modifichi del codice e non funziona? RIMETTI TUTTO A POSTO									#
 	#	4 Hai dubbi su qualche parte del codice? NON METTERE MANI											#
 	#	5 CERCA DI COMMENTARE CODICE CHE APPARE COMPLICATO AL RESTO DEL GRUPPO				#
-	#																																								#
-	#  Chi infrange le regole siamo obbligati a dare della puttana alla madre				#
-	#  Buon lavoro :)																																#
+	#																			
 	#################################################################################
 -->
 <?php
@@ -18,7 +16,6 @@ include "php/dbconnection_session.php";
 
   if ($_SESSION['tipo'] != 2){ ?>
     <script>
-      alert("Non sei autorizzato!");
       window.location.replace("index.php");
     </script>
     <?
@@ -70,10 +67,10 @@ include "php/dbconnection_session.php";
 		                <h4>Identificativo Squadra<font color=red size=6> *</font></h4>
 										<?php
 											$errore = "Inserisci un identificativo per la squadra";
-											if($_SESSION['erroreId']){
-												echo "<font color=red size=2>".$errore."</font>";
-												$_SESSION['erroreUsername'] = False;
-											}
+											if($_SESSION['erroreId']){?>
+												<font color=red size=2><?echo $errore?></font>
+												<?$_SESSION['erroreUsername'] = False;
+											}?>
 										?>
 		                <input type="text" name="id_squadra" class="form-control" placeholder="Nome squadra risoluzione">
 		              </div>
@@ -84,9 +81,9 @@ include "php/dbconnection_session.php";
 										<h4>Email<font color=red size=6> *</font></h4>
 										<?php
 											$errore = "Inserisci email del capo squadra";
-											if($_SESSION['erroreMail']){
-												echo "<font color=red size=2>".$errore."</font>";
-												$_SESSION['erroreMail'] = False;
+											if($_SESSION['erroreMail']){?>
+												<font color=red size=2><?echo $errore?></font>
+												<?$_SESSION['erroreMail'] = False;
 											}
 										?>
 										<input type="text" name="email_squadra" class="form-control">
@@ -98,9 +95,9 @@ include "php/dbconnection_session.php";
 		                <h4>Password<font color=red size=6> *</font></h4>
 										<?php
 											$errore = "Inserisci username del capo squadra";
-											if($_SESSION['errorePassword']){
-												echo "<font color=red size=2>".$errore."</font>";
-												$_SESSION['errorePassword'] = False;
+											if($_SESSION['errorePassword']){?>
+												 <font color=red size=2><?echo $errore?></font>
+												<?$_SESSION['errorePassword'] = False;
 											}
 										?>
 		                <input type="password" name="pass_squadra" class="form-control">
