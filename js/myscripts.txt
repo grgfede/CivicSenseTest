@@ -1,0 +1,6 @@
+$(document).ready(function() {
+	var maxCharacters = 255;
+	document.getElementById('description').onkeyup = function() {
+	  document.getElementById('characters-counter').innerHTML = (maxCharacters - this.value.length);
+	};
+});

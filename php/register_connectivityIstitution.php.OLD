@@ -1,0 +1,160 @@
+ <?php
+
+session_start();
+
+
+
+$connect = mysqli_connect("localhost", "civicsense2018", "", "my_civicsense2018");
+
+
+
+
+
+
+//MI MEMORIZZO I VALORI CHE RICEVO DAL FORM IN DELLE VARIABILI
+$ragione_sociale = ucfirst($_POST['ragione_sociale']);
+$partita_iva = ucfirst($_POST['partita_iva']);
+$sede_legale = ucfirst($_POST['sede_legale']);
+$sede_operativa = ucfirst($_POST['sede_operativa']);
+$URL = $_FILES['imageLogo']['tmp_name'];
+$mail = $_POST['email'];
+$username = $_POST['username'];
+$psw1 = $_POST['password1'];
+$psw2 = $_POST['password2'];
+$logo = "";
+
+
+//RESETTO A FALSE TUTTI GLI ERRORI
+$_SESSION['errore_sociale'] = False;
+$_SESSION['errore_iva'] = False;
+$_SESSION['errore_legale'] = False;
+$_SESSION['errore_operativa'] = False;
+$_SESSION['errore_mail'] = False;
+$_SESSION['errore_username'] = False;
+$_SESSION['errore_psw'] = False;
+$_SESSION['errore_psw_diverse'] = False;
+$_SESSION['errore_registrazione'] = False;
+$_SESSION['errore_logo'] = False;
+$_SESSION['error'] = False;
+
+//ESEGUO I CONTROLLI PER VERIFICARE SE I CAMPI OBBLIGATORI SONO COMPILATI
+if ($ragione_sociale == ""){
+	$_SESSION['errore_sociale'] = True;
+	$_SESSION['error'] = True;
+}
+
+if ($partita_iva == ""){
+	$_SESSION['error'] = True;
+	$_SESSION['errore_iva'] = True;
+}
+
+if ($sede_legale == ""){
+	$_SESSION['errore_legale'] = True;
+	$_SESSION['error'] = True;
+}
+
+if ($sede_operativa == ""){
+	$_SESSION['errore_operativa'] = True;
+	$_SESSION['error'] = True;
+}
+
+if (($mail == "") || (!filter_var($mail, FILTER_VALIDATE_EMAIL))){
+	$_SESSION['errore_mail'] = True;
+	$_SESSION['error'] = True;
+}
+if ($URL != ""){
+  $data = file_get_contents($_FILES["imageLogo"]['tmp_name']);
+  //CODIFICA FOTO IN BASE64
+  $codImg = base64_encode($data);
+  $logo = $codImg;
+} else if ($_FILES['imageLogo']['name'] == ""){
+  $_SESSION['errore_logo'] = True;
+  $_SESSION['error'] = True;
+  echo "OH";
+}
+
+if ($username == ""){
+	$_SESSION['errore_username'] = True;
+	$_SESSION['error'] = True;
+}
+
+
+if (($psw1 == "") || ($psw2 == "")){
+	$_SESSION['errore_psw'] = True;
+	$_SESSION['error'] = True;
+}
+
+if ($psw1 != $psw2){
+	$_SESSION['errore_psw_diverse'] = True;
+	$_SESSION['error'] = True;
+}
+
+
+
+if($_SESSION['error']){
+	header("Location: ../registerIstitution.php");
+}
+
+
+
+
+
+//SE TUTTI I CAMPI SONO CORRETTI, VERIFICA SE EMAIL E_O USERNAME ESISTONO GIA
+$query = "SELECT * FROM ente where id_ente = '".$username."' or email = '".$mail."'";
+$result = mysqli_query($connect, $query) or die ("ktm");
+$riga = mysqli_num_rows($result);
+echo $riga;
+
+
+if($riga > 0){
+	$_SESSION['errore_registrazione'] = True;
+	header('Location: ../registerIstitution.php');
+} else {
+	$tuttok = True;
+  //echo $username . " | " . $mail . " | " .  $ragione_sociale . " | \n" . $partita_iva .  " | " . $sede_legale . " | " . $sede_operativa . " | " . $logo . " ";
+  $sql_insert = "INSERT INTO ente values ('$username', '$mail', '$ragione_sociale', '$partita_iva', '$sede_legale', '$sede_operativa', '$logo', 'ciao')";
+  $result_insert = mysqli_query($connect,$sql_insert) or die ("Impossibile registrare nuovo ente");
+	$psw1 = md5($psw1);
+	$sql_insert2 = "INSERT INTO login values ('$username', '$psw1', 2)";
+	$result_insert2 = mysqli_query($connect, $sql_insert2) or die ("Impossibile creare password");
+
+
+  if(!($result_insert) || !($result_insert2)){
+		$tuttok = False;
+    echo "ERRORE";
+	}
+
+
+
+	if($tuttok){
+		// definisco mittente e destinatario della mail
+		$nome_mittente = "Civic Sense";
+		$mail_mittente = "civicsense@altervista.org";
+		$mail_destinatario = "$mail";
+		// definisco il subject ed il body della mail
+		$mail_oggetto = "Benvenuto su Civic Sense";
+		$mail_corpo = "Ciao, $nome. Ti contattiamo per comunicarti che la tua registrazione è andata a buon fine! Qui di seguito ti ricordiamo le tue credenziali:
+				Username: $username
+				Password: $psw2";
+
+		// aggiusto un po' le intestazioni della mail
+		// E' in questa sezione che deve essere definito il mittente (From)
+		// ed altri eventuali valori come Cc, Bcc, ReplyTo e X-Mailer
+
+		$mail_headers = "From: " .  $nome_mittente . " <" .  $mail_mittente . ">\r\n";
+		$mail_headers .= "Reply-To: " .  $mail_mittente . "\r\n";
+		$mail_headers .= "X-Mailer: PHP/" . phpversion();
+
+		if (mail($mail_destinatario, $mail_oggetto, $mail_corpo, $mail_headers)){
+  			header ("Location: successful_register.php?name=$ragione_sociale&mail=$mail");
+  	} else{
+ 		 echo "Errore. Nessun messaggio inviato.";
+    }
+
+		}
+
+}
+
+
+
+?>

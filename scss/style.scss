@@ -1,0 +1,84 @@
+// Demo
+// ====================================
+html,body{height:100%;}body{display:flex;flex-direction:column;align-items:flex-start; justify-content:center;width:100%;max-width:300px;margin:0 auto;}html{background:#222233;}label{margin:5px 0;}h3{margin:0 0 4px;color:#466A7E;font-size:20px;}
+
+
+// Radio
+// ====================================
+
+$input-radius: 80% !default;
+$input-unit: 24px !default; // accepts px, em, rem
+$input-spacing: $input-unit * 1.125 !default; // adjust depending on font-family
+$input-font: "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
+
+$radio-bg: white !default;
+$radio-txt-color: #AACCFF !default;
+
+$radio-checked-custom: (
+  background: #0081D0
+) !default;
+$radio-checked: #222233 !default;
+$radio-checked-focus: white !default;
+
+.input-control {
+  cursor: pointer;
+  display: inline-block;
+  padding-left: $input-spacing * 1.25;
+  position: relative;
+  font-family: $input-font;
+  font-size: $input-unit;
+  font-weight: 100;
+  line-height: $input-spacing;
+  color: $radio-txt-color;
+
+  input {
+    position: absolute;
+    width: auto !important;
+    z-index: 1;
+    opacity: 0;
+  }
+
+  &__indicator {
+    border-radius: $input-radius;
+    display: block;
+    height: $input-unit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    user-select: none;
+    width: $input-unit;
+    text-align: center;
+    background-color: $radio-bg;
+    background-size: 50% 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+}
+
+
+.input-control.radio {
+
+  input:focus ~ .input-control__indicator,
+  input:active ~ .input-control__indicator {
+    @each $key, $value in $radio-checked-custom {
+      #{$key} : #{$value};
+    }
+  }
+
+  input:checked ~ .input-control__indicator {
+    &:after {
+      border-radius: $input-radius;
+      content: "";
+      display: block;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: scale(.5);
+      transform-origin: center center;
+      width: 100%;
+      background: $radio-checked-focus;
+    }
+  }
+}
